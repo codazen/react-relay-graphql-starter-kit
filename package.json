@@ -1,0 +1,19 @@
+{
+  "name": "react-relay-graphql-starter-kit",
+  "version": "1.0.0",
+  "description": "React-Relay-GraphQL Starter Kit",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/codazen/react-relay-graphql-starter-kit.git"
+  },
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/codazen/react-relay-graphql-starter-kit/issues"
+  },
+  "homepage": "https://github.com/codazen/react-relay-graphql-starter-kit#readme"
+}
