@@ -12,6 +12,8 @@ export default class ListItem extends React.Component {
     super(props);
   }
 
+  props: Props;
+
   render() {
     return (
       <li>

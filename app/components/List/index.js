@@ -13,6 +13,8 @@ export default class List extends React.Component {
     super(props);
   }
 
+  props: Props;
+
   render() {
     return (
       <ul>
