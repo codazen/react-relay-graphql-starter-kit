@@ -2,6 +2,7 @@
 
 import React from 'react';
 import List from '../../components/List';
+import TodoForm from './TodoForm';
 
 type Props = {
   data: any,
@@ -9,6 +10,7 @@ type Props = {
 
 type State = {
   todos: any,
+  nextId: number,
 }
 
 export default class TodoApp extends React.Component {
@@ -19,17 +21,34 @@ export default class TodoApp extends React.Component {
     super(props);
     this.state = {
       todos: props.data,
+      nextId: 0,
     };
+
+    (this:any).addTodo = this.addTodo.bind(this);
   }
 
   state: State;
 
   props: Props;
 
+  addTodo(todo: string) {
+    const newId = this.state.nextId;
+    const newTodos = this.state.todos;
+    newTodos.push({
+      id: newId,
+      content: todo,
+    });
+    this.setState({
+      todos: newTodos,
+      nextId: this.state.nextId + 1,
+    });
+  }
+
   render() {
     return (
       <div>
         <h1>Todo App</h1>
+        <TodoForm addTodo={this.addTodo} />
         <List listItems={this.state.todos} />
       </div>
     );
@@ -37,18 +56,5 @@ export default class TodoApp extends React.Component {
 }
 
 TodoApp.defaultProps = {
-  data: [
-    {
-      id: 1,
-      content: 'Item 1',
-    },
-    {
-      id: 2,
-      content: 'Item 2',
-    },
-    {
-      id: 3,
-      content: 'Item 3',
-    },
-  ],
+  data: [],
 };
