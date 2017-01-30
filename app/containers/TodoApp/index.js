@@ -25,6 +25,8 @@ export default class TodoApp extends React.Component {
     };
 
     (this:any).addTodo = this.addTodo.bind(this);
+    (this:any).updateTodo = this.updateTodo.bind(this);
+    (this:any).removeTodo = this.removeTodo.bind(this);
   }
 
   state: State;
@@ -40,7 +42,33 @@ export default class TodoApp extends React.Component {
     });
     this.setState({
       todos: newTodos,
-      nextId: this.state.nextId + 1,
+      nextId: newId + 1,
+    });
+  }
+
+  updateTodo(item: any) {
+    const newTodos = this.state.todos;
+    for (let i = 0; i < newTodos.length; i++) {
+      if (newTodos[i].id === item.id) {
+        newTodos[i].content = item.content;
+        break;
+      }
+    }
+    this.setState({
+      todos: newTodos,
+    });
+  }
+
+  removeTodo(id: any) {
+    const newTodos = this.state.todos;
+    for (let i = 0; i < newTodos.length; i++) {
+      if (newTodos[i].id === id) {
+        newTodos.splice(i, 1);
+        break;
+      }
+    }
+    this.setState({
+      todos: newTodos.length === 0 ? [] : newTodos,
     });
   }
 
@@ -49,7 +77,11 @@ export default class TodoApp extends React.Component {
       <div>
         <h1>Todo App</h1>
         <TodoForm addTodo={this.addTodo} />
-        <List listItems={this.state.todos} />
+        <List
+          listItems={this.state.todos}
+          updateItem={this.updateTodo}
+          removeItem={this.removeTodo}
+        />
       </div>
     );
   }
