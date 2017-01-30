@@ -28,13 +28,13 @@ export default class TodoForm extends React.Component {
 
   props: Props;
 
-  _handleChange(event) {
+  handleChange(event) {
     const newState = {};
     newState[event.target.name] = event.target.value;
     this.setState(newState);
   }
 
-  _handleSubmit(event) {
+  handleSubmit(event) {
     event.preventDefault();
     this.props.addTodo(this.state.todoValue);
     this.setState({
