@@ -13,6 +13,10 @@ type State = {
   nextId: number,
 }
 
+function findTodo(element) {
+  return element.id === this.id;
+}
+
 export default class TodoApp extends React.Component {
 
   static defaultProps: Props;
@@ -48,12 +52,7 @@ export default class TodoApp extends React.Component {
 
   updateTodo(item: any) {
     const newTodos = this.state.todos;
-    for (let i = 0; i < newTodos.length; i++) {
-      if (newTodos[i].id === item.id) {
-        newTodos[i].content = item.content;
-        break;
-      }
-    }
+    newTodos[newTodos.findIndex(findTodo, { id: item.id })].content = item.content;
     this.setState({
       todos: newTodos,
     });
@@ -61,18 +60,14 @@ export default class TodoApp extends React.Component {
 
   removeTodo(id: any) {
     const newTodos = this.state.todos;
-    for (let i = 0; i < newTodos.length; i++) {
-      if (newTodos[i].id === id) {
-        newTodos.splice(i, 1);
-        break;
-      }
-    }
+    newTodos.splice(newTodos.findIndex(findTodo, { id }), 1);
     this.setState({
-      todos: newTodos.length === 0 ? [] : newTodos,
+      todos: newTodos,
     });
   }
 
   render() {
+    console.log(this.state);
     return (
       <div>
         <h1>Todo App</h1>
