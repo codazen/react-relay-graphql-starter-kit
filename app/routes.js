@@ -8,8 +8,6 @@ import TodoApp from './containers/TodoApp';
 
 export default (
   <Route path='/' component={App}>
-    <IndexRoute
-      component={TodoApp}
-    />
+    <IndexRoute component={TodoApp} />
   </Route>
 );

@@ -14,10 +14,15 @@ type Props = {
 };
 
 type State = {
-  todos: Array<Todo>,
-  nextId: number,
+  todos: Array<Todo>, // list of todos for app
+  nextId: number, // id of next todo created
 }
 
+/**
+ * Container for todo application
+ * Parent component: N/A
+ * Child components: List, TodoForm
+ */
 export default class TodoApp extends React.Component {
 
   static defaultProps: Props;

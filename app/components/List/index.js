@@ -3,12 +3,22 @@
 import React from 'react';
 import ListItem from '../ListItem';
 
-type Props = {
-  listItems: any,
-  updateItem: () => void,
-  removeItem: () => void,
+type Item = {
+  id: any,
+  content: string,
 };
 
+type Props = {
+  listItems: any,
+  updateItem: (Item) => void, // callback for updating listItem
+  removeItem: (id: any) => void, // callback for removing listItem
+};
+
+/**
+ * Generic list Component
+ * Parent component: N/A
+ * Child component(s): ListItem
+ */
 export default class List extends React.Component {
 
   constructor(props: Props) { // eslint-disable-line no-useless-constructor

@@ -3,13 +3,18 @@
 import React from 'react';
 
 type Props = {
-  addTodo: () => void,
+  addTodo: () => void, // callback to create new todo in parent state
 };
 
 type State = {
-  todoValue: string,
+  content: string, // content for new todo
 };
 
+/**
+ * Form for creating a new todo item
+ * Parent component: TodoApp
+ * Child components: N/A
+ */
 export default class TodoForm extends React.Component {
 
   static defaultProps: Props;
@@ -17,7 +22,7 @@ export default class TodoForm extends React.Component {
   constructor(props: Props) {
     super(props);
     this.state = {
-      todoValue: '',
+      content: '',
     };
 
     (this:any).handleChange = this.handleChange.bind(this);
@@ -36,9 +41,9 @@ export default class TodoForm extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    this.props.addTodo(this.state.todoValue);
+    this.props.addTodo(this.state.content);
     this.setState({
-      todoValue: '',
+      content: '',
     });
   }
 
@@ -47,8 +52,8 @@ export default class TodoForm extends React.Component {
       <div>
         <input
           type='text'
-          value={this.state.todoValue}
-          name='todoValue'
+          value={this.state.content}
+          name='content'
           onChange={this.handleChange}
         />
         <button onClick={this.handleSubmit}>

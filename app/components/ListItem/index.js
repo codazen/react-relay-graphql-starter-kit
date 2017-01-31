@@ -2,19 +2,29 @@
 
 import React from 'react';
 
-type Props = {
-  content: string,
+type Item = {
   id: any,
-  updateItem: () => void,
-  removeItem: () => void,
+  content: string,
+};
+
+type Props = {
+  content: string, // initial item content
+  id: any, // id of item
+  updateItem: (Item) => void, // callback for updating listItem
+  removeItem: (id: any) => void, // callback for removing listItem
 };
 
 type State = {
-  editStatus: boolean,
-  content: string,
-  id: any,
+  editStatus: boolean, // keeps track of what view to display
+  content: string, // display content of item
+  id: any, // id reference for item
 };
 
+/**
+ * Generic list item component
+ * Parent component: List
+ * Child component: N/A
+ */
 export default class ListItem extends React.Component {
 
   constructor(props: Props) {
