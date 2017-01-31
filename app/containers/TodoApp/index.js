@@ -4,12 +4,18 @@ import React from 'react';
 import List from '../../components/List';
 import TodoForm from './TodoForm';
 
+
+type Todo = {
+  id: number,
+  content: string,
+};
+
 type Props = {
-  data: any,
+  data: Array<Todo>,
 };
 
 type State = {
-  todos: any,
+  todos: Array<Todo>,
   nextId: number,
 }
 
@@ -67,7 +73,6 @@ export default class TodoApp extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div>
         <h1>Todo App</h1>
