@@ -5,8 +5,10 @@ module.exports = {
   ],
   "extends": "airbnb",
   "rules": {
+    "jsx-a11y/no-static-element-interactions": ["off"],
     "jsx-quotes": ["off"],
     "linebreak-style": ["off"],
+    "no-plusplus": ["off"],
     "quotes": ["error", "single"],
     "react/jsx-filename-extension": ["off"],
     "react/prefer-stateless-function": ["off"],
