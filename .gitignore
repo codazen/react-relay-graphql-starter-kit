@@ -37,3 +37,6 @@ jspm_packages
 .node_repl_history
 
 public/bundle.js
+
+server/data/schema.graphql
+server/data/schema.json

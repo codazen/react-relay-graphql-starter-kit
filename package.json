@@ -7,10 +7,10 @@
     "eslint": "eslint ./app/**/*.js ./server/**/*.js",
     "flow": "flow",
     "start": "npm run start:windows",
-    "start:linux": "nodemon --exec babel-node server --presets latest --plugins transform-flow-strip-types & webpack --watch --config internals/webpack.config.js",
-    "start:windows": "start nodemon --exec babel-node server --presets latest --plugins transform-flow-strip-types & start webpack --watch --config internals/webpack.config.js",
+    "start:linux": "nodemon --exec babel-node server --presets=latest --plugins transform-flow-strip-types & webpack --watch --config internals/webpack.config.js",
+    "start:windows": "start nodemon --exec babel-node server --presets=latest --plugins transform-flow-strip-types & start webpack --watch --config internals/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "update-schema": "./node_modules/.bin/babel-node --presets latest --plugins transform-flow-strip-types ./server/scripts/updateSchema.js"
+    "update-schema": "./node_modules/.bin/babel-node --presets=latest,stage-0 --plugins transform-flow-strip-types ./server/scripts/updateSchema.js"
   },
   "pre-commit": [
     "eslint",
@@ -42,6 +42,7 @@
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "eslint": "^3.13.0",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-flowtype": "^2.30.0",

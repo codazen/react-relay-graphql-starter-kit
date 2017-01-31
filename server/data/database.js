@@ -16,15 +16,15 @@ const viewer = new User();
 viewer.id = VIEWER;
 
 // storage for all users
-const usersById = {
+export const usersById = {
   [VIEWER]: viewer,
 };
 
 // storage for all todos
-const todosById = {};
+export const todosById = {};
 
 // todos for a user
-const todoIdsByUser = {
+export const todoIdsByUser = {
   [VIEWER]: [],
 };
 
