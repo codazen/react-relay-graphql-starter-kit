@@ -4,7 +4,6 @@ import React from 'react';
 import List from '../../components/List';
 import TodoForm from './TodoForm';
 
-
 type Todo = {
   id: number,
   content: string,
