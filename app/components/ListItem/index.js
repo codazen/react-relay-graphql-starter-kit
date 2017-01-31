@@ -17,7 +17,7 @@ type State = {
 
 export default class ListItem extends React.Component {
 
-  constructor(props: Props) { // eslint-disable-line no-useless-constructor
+  constructor(props: Props) {
     super(props);
     this.state = {
       editStatus: false,
