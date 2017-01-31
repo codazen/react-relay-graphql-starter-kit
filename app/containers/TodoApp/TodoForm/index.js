@@ -14,7 +14,7 @@ export default class TodoForm extends React.Component {
 
   static defaultProps: Props;
 
-  constructor(props: Props) { // eslint-disable-line no-useless-constructor
+  constructor(props: Props) {
     super(props);
     this.state = {
       todoValue: '',
