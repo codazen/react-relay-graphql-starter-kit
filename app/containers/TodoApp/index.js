@@ -1,6 +1,7 @@
 /* @flow */
 
 import React from 'react';
+import Relay from 'react-relay';
 import List from '../../components/List';
 import TodoForm from './TodoForm';
 
@@ -23,7 +24,7 @@ type State = {
  * Parent component: N/A
  * Child components: List, TodoForm
  */
-export default class TodoApp extends React.Component {
+class TodoApp extends React.Component {
 
   static defaultProps: Props;
 
@@ -79,6 +80,7 @@ export default class TodoApp extends React.Component {
   }
 
   render() {
+    console.log(this.props);
     return (
       <div>
         <h1>Todo App</h1>
@@ -96,3 +98,20 @@ export default class TodoApp extends React.Component {
 TodoApp.defaultProps = {
   data: [],
 };
+
+export default Relay.createContainer(TodoApp, {
+  fragments: {
+    user: () => Relay.QL`
+      fragment on User {
+        todos(first:1000){
+          edges {
+            node {
+              id
+              content
+            }
+          }
+        }
+      }
+    `
+  }
+})

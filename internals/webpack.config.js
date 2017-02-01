@@ -16,7 +16,11 @@ module.exports = {
         loader: 'babel-loader',
         exclude: /node_modules/,
         query: {
-          presets: ['latest', 'react'],
+          presets: ['latest', 'react', 'stage-0', {
+            'plugins': [
+              './build/babelRelayPlugin'
+            ]
+          }],
           plugins: ['transform-flow-strip-types']
         }
       }
