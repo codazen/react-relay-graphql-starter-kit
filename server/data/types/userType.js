@@ -4,7 +4,7 @@ import { GraphQLObjectType } from 'graphql';
 import { connectionDefinitions, globalIdField, connectionArgs, connectionFromArray } from 'graphql-relay';
 import { nodeInterface } from '../nodes';
 import { registerType } from '../typeRegistry';
-import { getTodo, usersById, getUser } from '../database';
+import { getTodos, usersById, getUser } from '../database';
 import { todoConnection } from './todoType';
 
 const userType = new GraphQLObjectType({
@@ -18,7 +18,7 @@ const userType = new GraphQLObjectType({
       args: connectionArgs,
       resolve: async(source, args, context, info) => {
         return connectionFromArray(
-          source.todos.map(async(id) => await getTodo(id)),
+          getTodos(),
           args
         );
       }

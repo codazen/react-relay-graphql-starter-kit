@@ -40,6 +40,10 @@ export function addTodo(content: string) {
   return todo.id;
 }
 
+addTodo('Todo 1');
+addTodo('Todo 2');
+addTodo('Todo 3');
+
 export function getTodo(id: string) {
   return todosById[id];
 }
