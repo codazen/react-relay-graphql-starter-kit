@@ -50,6 +50,7 @@ export default class TodoForm extends React.Component {
   render() {
     return (
       <div>
+        <h2>Todo Form</h2>
         <input
           type='text'
           value={this.state.content}

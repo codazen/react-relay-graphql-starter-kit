@@ -2,16 +2,11 @@
 
 import React from 'react';
 
-type Item = {
-  id: any,
-  content: string,
-};
-
 type Props = {
   content: string, // initial item content
   id: any, // id of item
-  updateItem: (Item) => void, // callback for updating listItem
-  removeItem: (id: any) => void, // callback for removing listItem
+  updateItem: () => void, // eslint-disable-line
+  removeItem: () => void, // eslint-disable-line
 };
 
 type State = {
@@ -26,6 +21,8 @@ type State = {
  * Child component: N/A
  */
 export default class ListItem extends React.Component {
+
+  static defaultProps: Props;
 
   constructor(props: Props) {
     super(props);
