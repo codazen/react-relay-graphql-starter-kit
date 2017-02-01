@@ -5,8 +5,8 @@ import React from 'react';
 type Props = {
   content: string, // initial item content
   id: any, // id of item
-  updateItem: () => void, // eslint-disable-line
-  removeItem: () => void, // eslint-disable-line
+  updateItem: ?Function, // eslint-disable-line
+  removeItem: ?Function, // eslint-disable-line
 };
 
 type State = {
@@ -35,6 +35,7 @@ export default class ListItem extends React.Component {
     (this:any).openEditMode = this.openEditMode.bind(this);
     (this:any).closeEditMode = this.closeEditMode.bind(this);
     (this:any).handleChange = this.handleChange.bind(this);
+    (this:any).handleRemove = this.handleRemove.bind(this);
   }
 
   state: State;
@@ -47,6 +48,15 @@ export default class ListItem extends React.Component {
     this.setState(newState);
   }
 
+  handleRemove() {
+    const {
+      removeItem,
+    } = this.props;
+    if (removeItem) {
+      removeItem(this.state.id);
+    }
+  }
+
   openEditMode() {
     this.setState({
       editStatus: true,
@@ -54,10 +64,15 @@ export default class ListItem extends React.Component {
   }
 
   closeEditMode() {
-    this.props.updateItem({
-      id: this.state.id,
-      content: this.state.content,
-    });
+    const {
+      updateItem,
+    } = this.props;
+    if (updateItem) {
+      updateItem({
+        id: this.state.id,
+        content: this.state.content,
+      });
+    }
     this.setState({
       editStatus: false,
     });
@@ -85,7 +100,7 @@ export default class ListItem extends React.Component {
             <span onClick={this.props.updateItem ? this.openEditMode : null}>
               {this.state.content}
             </span>
-            <button onClick={() => { this.props.removeItem(this.state.id); }}>
+            <button onClick={this.handleRemove}>
               Delete
             </button>
           </div>

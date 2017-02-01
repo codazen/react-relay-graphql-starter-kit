@@ -21,8 +21,6 @@ class TodoItem extends React.Component {
       <ListItem
         content={this.props.todo.content}
         id={this.props.todo.id}
-        updateItem={undefined}
-        removeItem={undefined}
       />
     );
   }
