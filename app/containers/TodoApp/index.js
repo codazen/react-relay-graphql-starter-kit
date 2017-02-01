@@ -80,7 +80,7 @@ class TodoApp extends React.Component {
   }
 
   render() {
-    console.log(this.props);
+    console.log(this.props); // eslint-disable-line no-console
     return (
       <div>
         <h1>Todo App</h1>
