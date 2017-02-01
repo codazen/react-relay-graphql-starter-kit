@@ -4,12 +4,13 @@
   "description": "React-Relay-GraphQL Starter Kit",
   "main": "server.js",
   "scripts": {
-    "eslint": "eslint ./app/**/*.js ./server/**/*.js",
+    "eslint": "eslint . --ext .js",
     "flow": "flow",
     "start": "npm run start:windows",
-    "start:linux": "nodemon --exec babel-node server --presets latest --plugins transform-flow-strip-types & webpack --watch --config internals/webpack.config.js",
-    "start:windows": "start nodemon --exec babel-node server --presets latest --plugins transform-flow-strip-types & start webpack --watch --config internals/webpack.config.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start:linux": "nodemon --exec babel-node server --presets=latest,stage-0 --plugins transform-flow-strip-types & webpack --watch --config internals/webpack.config.js",
+    "start:windows": "start nodemon --exec babel-node server --presets=latest,stage-0 --plugins transform-flow-strip-types & start webpack --watch --config internals/webpack.config.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "update-schema": "./node_modules/.bin/babel-node --presets=latest,stage-0 --plugins transform-flow-strip-types ./server/scripts/updateSchema.js"
   },
   "pre-commit": [
     "eslint",
@@ -26,18 +27,26 @@
   },
   "homepage": "https://github.com/codazen/react-relay-graphql-starter-kit#readme",
   "dependencies": {
+    "babel-relay-plugin": "^0.11.0",
     "express": "^4.14.0",
+    "express-graphql": "^0.6.2",
+    "graphql": "^0.9.1",
+    "graphql-relay": "^0.5.1",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
-    "react-router": "^3.0.2"
+    "react-relay": "^0.10.0",
+    "react-router": "^3.0.2",
+    "react-router-relay": "^0.13.5"
   },
   "devDependencies": {
+    "babel-cli": "^6.22.2",
     "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-0": "^6.22.0",
     "eslint": "^3.13.0",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-flowtype": "^2.30.0",
@@ -45,6 +54,7 @@
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.38.0",
+    "fs": "0.0.1-security",
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "precommit-hook": "^3.0.0",

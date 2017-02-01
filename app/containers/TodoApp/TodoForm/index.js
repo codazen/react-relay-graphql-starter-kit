@@ -3,7 +3,7 @@
 import React from 'react';
 
 type Props = {
-  addTodo: () => void, // callback to create new todo in parent state
+  addTodo: ?Function, // callback to create new todo in parent state
 };
 
 type State = {
@@ -40,8 +40,14 @@ export default class TodoForm extends React.Component {
   }
 
   handleSubmit(event) {
+    const {
+      addTodo,
+    } = this.props;
+
+    if (addTodo) {
+      addTodo(this.state.content);
+    }
     event.preventDefault();
-    this.props.addTodo(this.state.content);
     this.setState({
       content: '',
     });
@@ -50,6 +56,7 @@ export default class TodoForm extends React.Component {
   render() {
     return (
       <div>
+        <h2>Todo Form</h2>
         <input
           type='text'
           value={this.state.content}
