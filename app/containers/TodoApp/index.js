@@ -28,7 +28,7 @@ class TodoApp extends React.Component {
     return (
       <div>
         <h1>Todo App</h1>
-        <TodoForm addTodo={() => {}} />
+        <TodoForm />
         <TodoList todos={this.props.user.todos} />
       </div>
     );
