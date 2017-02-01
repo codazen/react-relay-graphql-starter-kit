@@ -40,26 +40,32 @@ export function addTodo(content: string) {
   return todo.id;
 }
 
+// add some data for a starting point
 addTodo('Todo 1');
 addTodo('Todo 2');
 addTodo('Todo 3');
 
+// get a todo by id
 export function getTodo(id: string) {
   return todosById[id];
 }
 
+// get a user by id
 export function getUser(id: string) {
   return usersById[id];
 }
 
+// get main viewer (since user identification not implemented)
 export function getViewer() {
   return getUser(VIEWER);
 }
 
+// get all todos for viewer user
 export function getTodos() {
   return todoIdsByUser[VIEWER].map(id => todosById[id]);
 }
 
+// remove todo from viewer user
 export function removeTodo(id: string) {
   const index = todoIdsByUser[VIEWER].indexOf(id);
   if (index !== -1) {
@@ -68,6 +74,7 @@ export function removeTodo(id: string) {
   delete todosById[id];
 }
 
+// update todo
 export function updateTodo(id: string, content: string) {
   const todo = getTodo(id);
   todo.content = content;

@@ -1,13 +1,12 @@
 /* @flow */
 
 const path = require('path');
-const webpack = require('webpack');
 
 module.exports = {
   entry: './app/app.js',
   output: {
     path: path.resolve(process.cwd(), 'public'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',
   },
   module: {
     loaders: [
@@ -17,13 +16,13 @@ module.exports = {
         exclude: /node_modules/,
         query: {
           presets: ['latest', 'react', 'stage-0', {
-            'plugins': [
-              './build/babelRelayPlugin'
-            ]
+            plugins: [
+              './build/babelRelayPlugin',
+            ],
           }],
-          plugins: ['transform-flow-strip-types']
-        }
-      }
-    ]
-  }
-}
+          plugins: ['transform-flow-strip-types'],
+        },
+      },
+    ],
+  },
+};

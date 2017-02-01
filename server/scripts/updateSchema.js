@@ -10,7 +10,7 @@ import { schema } from '../data/schema';
 (async () => {
   const result = await (graphql(schema, introspectionQuery));
   if (result.errors) {
-    console.error( // esling-disable-line no-console
+    console.error( // eslint-disable-line no-console
       'ERROR introspecting schema: ',
       JSON.stringify(result.errors, null, 2),
     );

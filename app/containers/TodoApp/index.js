@@ -112,6 +112,6 @@ export default Relay.createContainer(TodoApp, {
           }
         }
       }
-    `
-  }
-})
+    `,
+  },
+});

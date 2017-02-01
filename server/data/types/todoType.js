@@ -26,7 +26,7 @@ const todoType = new GraphQLObjectType({
 const {
   connectionType: todoConnection,
   edgeType: TodoEdge,
-} = connectionDefinitions({name: 'Todo', nodeType: todoType});
+} = connectionDefinitions({ name: 'Todo', nodeType: todoType });
 
 registerType(todosById, todoType, getTodo);
 

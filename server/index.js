@@ -8,7 +8,7 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use(express.static('public'));
-app.use('/graphql', graphQLHTTP({schema, pretty: true, graphiql: true,}));
+app.use('/graphql', graphQLHTTP({ schema, pretty: true, graphiql: true }));
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`); // eslint-disable-line no-console
