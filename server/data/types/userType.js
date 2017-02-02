@@ -5,15 +5,15 @@ import { connectionDefinitions, globalIdField, connectionArgs, connectionFromArr
 import { nodeInterface } from '../nodes';
 import { registerType } from '../typeRegistry';
 import { getTodos, usersById, getUser } from '../database';
-import { todoConnection } from './todoType';
+import { TodoConnection } from './todoType';
 
-const userType = new GraphQLObjectType({
+const UserType = new GraphQLObjectType({
   name: 'User',
   description: 'A user with todo list',
   fields: {
     id: globalIdField('User'),
     todos: {
-      type: todoConnection,
+      type: TodoConnection,
       description: 'The todos for a user',
       args: connectionArgs,
       resolve: async (source, args, context, info) => // eslint-disable-line
@@ -24,10 +24,10 @@ const userType = new GraphQLObjectType({
 });
 
 const {
-  connectionType: userConnection,
+  connectionType: UserConnection,
   edgeType: UserEdge,
-} = connectionDefinitions({ name: 'User', nodeType: userType });
+} = connectionDefinitions({ name: 'User', nodeType: UserType });
 
-registerType(usersById, userType, getUser);
+registerType(usersById, UserType, getUser);
 
-module.exports = { userType, userConnection, UserEdge };
+module.exports = { UserType, UserConnection, UserEdge };

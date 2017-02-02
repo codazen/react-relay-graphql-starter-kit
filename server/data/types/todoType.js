@@ -10,7 +10,7 @@ import {
 } from '../database';
 
 
-const todoType = new GraphQLObjectType({
+const TodoType = new GraphQLObjectType({
   name: 'Todo',
   description: 'A todo item',
   fields: {
@@ -24,10 +24,10 @@ const todoType = new GraphQLObjectType({
 });
 
 const {
-  connectionType: todoConnection,
+  connectionType: TodoConnection,
   edgeType: TodoEdge,
-} = connectionDefinitions({ name: 'Todo', nodeType: todoType });
+} = connectionDefinitions({ name: 'Todo', nodeType: TodoType });
 
-registerType(todosById, todoType, getTodo);
+registerType(todosById, TodoType, getTodo);
 
-module.exports = { todoType, todoConnection, TodoEdge };
+module.exports = { TodoType, TodoConnection, TodoEdge };

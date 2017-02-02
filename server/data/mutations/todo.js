@@ -12,8 +12,8 @@ import {
   fromGlobalId,
 } from 'graphql-relay';
 
-import { userType } from '../types/userType';
-import { TodoEdge, todoType } from '../types/todoType';
+import { UserType } from '../types/userType';
+import { TodoEdge, TodoType } from '../types/todoType';
 import {
   addTodo,
   getTodo,
@@ -47,7 +47,7 @@ const addTodoMutation = mutationWithClientMutationId({
       },
     },
     user: {
-      type: userType,
+      type: UserType,
       resolve: () => getViewer(),
     },
   },
@@ -72,7 +72,7 @@ const removeTodoMutation = mutationWithClientMutationId({
       resolve: ({ id }) => id,
     },
     user: {
-      type: userType,
+      type: UserType,
       resolve: () => getViewer(),
     },
   },
@@ -97,7 +97,7 @@ const updateTodoMutation = mutationWithClientMutationId({
   },
   outputFields: {
     todo: {
-      type: todoType,
+      type: TodoType,
       resolve: async ({ localTodoId }) => getTodo(localTodoId),
     },
   },

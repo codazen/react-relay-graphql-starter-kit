@@ -1,10 +1,10 @@
 /* @flow */
 
-import { userType } from '../types/userType';
+import { UserType } from '../types/userType';
 import { getViewer } from '../database';
 
 const user = {
-  type: userType,
+  type: UserType,
   resolve: async () => getViewer(),
 };
 
