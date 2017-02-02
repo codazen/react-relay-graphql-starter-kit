@@ -23,9 +23,8 @@ type Props = {
  * Child component: TodoItem
  */
 class TodoList extends React.Component {
-  constructor(props: Props) { // eslint-disable-line
-    super(props);
-  }
+
+  props: Props;
 
   render() {
     return (

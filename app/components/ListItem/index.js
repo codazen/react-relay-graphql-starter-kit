@@ -29,24 +29,19 @@ export default class ListItem extends React.Component {
       content: props.content,
       id: props.id,
     };
-
-    (this:any).openEditMode = this.openEditMode.bind(this);
-    (this:any).closeEditMode = this.closeEditMode.bind(this);
-    (this:any).handleChange = this.handleChange.bind(this);
-    (this:any).handleRemove = this.handleRemove.bind(this);
   }
 
   state: State;
 
   props: Props;
 
-  handleChange(event: any) {
+  handleChange = (event: any) => {
     const newState = {};
     newState[event.target.name] = event.target.value;
     this.setState(newState);
   }
 
-  handleRemove() {
+  handleRemove = () => {
     const {
       removeItem,
     } = this.props;
@@ -55,13 +50,13 @@ export default class ListItem extends React.Component {
     }
   }
 
-  openEditMode() {
+  openEditMode = () => {
     this.setState({
       editStatus: true,
     });
   }
 
-  closeEditMode() {
+  closeEditMode = () => {
     const {
       updateItem,
     } = this.props;

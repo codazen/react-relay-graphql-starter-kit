@@ -17,29 +17,24 @@ type State = {
  */
 export default class TodoForm extends React.Component {
 
-  static defaultProps: Props;
-
   constructor(props: Props) {
     super(props);
     this.state = {
       content: '',
     };
-
-    (this:any).handleChange = this.handleChange.bind(this);
-    (this:any).handleSubmit = this.handleSubmit.bind(this);
   }
 
   state: State;
 
   props: Props;
 
-  handleChange(event) {
+  handleChange = (event: any) => {
     const newState = {};
     newState[event.target.name] = event.target.value;
     this.setState(newState);
   }
 
-  handleSubmit(event) {
+  handleSubmit = (event: any) => {
     const {
       addTodo,
     } = this.props;
@@ -70,7 +65,3 @@ export default class TodoForm extends React.Component {
     );
   }
 }
-
-TodoForm.defaultProps = {
-  addTodo: () => {},
-};

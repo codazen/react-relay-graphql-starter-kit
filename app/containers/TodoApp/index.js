@@ -22,16 +22,10 @@ type Props = {
  */
 class TodoApp extends React.Component {
 
-  constructor(props: Props) { // eslint-disable-line
-    super(props);
-
-    (this:any).handleAddTodo = this.handleAddTodo.bind(this);
-  }
-
   props: Props;
 
   // addTodo function passed to the TodoForm
-  handleAddTodo(content: string) {
+  handleAddTodo = (content: string) => {
     this.props.relay.commitUpdate(
       new AddTodoMutation({ content, user: this.props.user }),
     );

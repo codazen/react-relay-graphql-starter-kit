@@ -11,18 +11,18 @@ export default class UpdateTodoMutation extends Relay.Mutation {
     `,
   };
 
-  getMutation() {
+  static getMutation() {
     return Relay.QL`mutation{ updateTodo }`;
   }
 
-  getVariables() {
+  static getVariables() {
     return {
       id: this.props.todo.id,
       content: this.props.content,
     };
   }
 
-  getFatQuery() {
+  static getFatQuery() {
     return Relay.QL`
       fragment on UpdateTodoPayload @relay(pattern: true) {
         todo {
@@ -32,7 +32,7 @@ export default class UpdateTodoMutation extends Relay.Mutation {
     `;
   }
 
-  getConfigs() {
+  static getConfigs() {
     return [{
       type: 'FIELDS_CHANGE',
       fieldIDs: {

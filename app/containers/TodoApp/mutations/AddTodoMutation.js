@@ -11,17 +11,17 @@ export default class AddTodoMutation extends Relay.Mutation {
     `,
   };
 
-  getMutation() {
+  static getMutation() {
     return Relay.QL`mutation{ addTodo }`;
   }
 
-  getVariables() {
+  static getVariables() {
     return {
       content: this.props.content,
     };
   }
 
-  getFatQuery() {
+  static getFatQuery() {
     return Relay.QL`
       fragment on AddTodoPayload @relay(plural: true) {
         user {
@@ -39,7 +39,7 @@ export default class AddTodoMutation extends Relay.Mutation {
     `;
   }
 
-  getConfigs() {
+  static getConfigs() {
     return [{
       type: 'RANGE_ADD',
       parentName: 'user',
@@ -53,7 +53,7 @@ export default class AddTodoMutation extends Relay.Mutation {
     }];
   }
 
-  getOptimisticResponse() {
+  static getOptimisticResponse() {
     return {
       newTodoEdge: {
         node: {

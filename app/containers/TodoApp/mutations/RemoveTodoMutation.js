@@ -11,17 +11,17 @@ export default class RemoveTodoMutation extends Relay.Mutation {
     `,
   };
 
-  getMutation() {
+  static getMutation() {
     return Relay.QL`mutation{ removeTodo }`;
   }
 
-  getVariables() {
+  static getVariables() {
     return {
       id: this.props.id,
     };
   }
 
-  getFatQuery() {
+  static getFatQuery() {
     return Relay.QL`
       fragment on RemoveTodoPayload @relay(plural: true) {
         deletedTodoId
@@ -30,7 +30,7 @@ export default class RemoveTodoMutation extends Relay.Mutation {
     `;
   }
 
-  getConfigs() {
+  static getConfigs() {
     return [{
       type: 'NODE_DELETE',
       parentName: 'user',

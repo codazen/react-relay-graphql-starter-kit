@@ -27,22 +27,18 @@ type Props = {
  * Child component: ListItem
  */
 class TodoItem extends React.Component {
-  constructor(props: Props) {
-    super(props);
 
-    (this:any).handleRemoveTodo = this.handleRemoveTodo.bind(this);
-    (this:any).handleUpdateTodo = this.handleUpdateTodo.bind(this);
-  }
+  props: Props;
 
   // removeTodo function passed to the ListItem component
-  handleRemoveTodo(id: string) {
+  handleRemoveTodo = (id: string) => {
     this.props.relay.commitUpdate(
       new RemoveTodoMutation({ id, user: this.props.user }),
     );
   }
 
   // updateTodo function passed to the ListItem component
-  handleUpdateTodo(todo: Todo) {
+  handleUpdateTodo = (todo: Todo) => {
     this.props.relay.commitUpdate(
       new UpdateTodoMutation({ todo: this.props.todo, content: todo.content }),
     );
