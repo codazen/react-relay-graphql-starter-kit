@@ -18,7 +18,7 @@ type Props = {
 /**
  * Container for todo application
  * Parent component: N/A
- * Child components: List, TodoForm
+ * Child components: TodoList, TodoForm
  */
 class TodoApp extends React.Component {
 
@@ -30,6 +30,7 @@ class TodoApp extends React.Component {
 
   props: Props;
 
+  // addTodo function passed to the TodoForm
   handleAddTodo(content: string) {
     this.props.relay.commitUpdate(
       new AddTodoMutation({ content, user: this.props.user }),

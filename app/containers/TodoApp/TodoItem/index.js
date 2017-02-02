@@ -21,20 +21,27 @@ type Props = {
   },
 };
 
+/**
+ * ListItem wrapper for TodoList implementation
+ * Parent component: TodoList
+ * Child component: ListItem
+ */
 class TodoItem extends React.Component {
-  constructor(props: Props) { // eslint-disable-line
+  constructor(props: Props) {
     super(props);
 
     (this:any).handleRemoveTodo = this.handleRemoveTodo.bind(this);
     (this:any).handleUpdateTodo = this.handleUpdateTodo.bind(this);
   }
 
+  // removeTodo function passed to the ListItem component
   handleRemoveTodo(id: string) {
     this.props.relay.commitUpdate(
       new RemoveTodoMutation({ id, user: this.props.user }),
     );
   }
 
+  // updateTodo function passed to the ListItem component
   handleUpdateTodo(todo: Todo) {
     this.props.relay.commitUpdate(
       new UpdateTodoMutation({ todo: this.props.todo, content: todo.content }),

@@ -40,13 +40,4 @@ export default class RemoveTodoMutation extends Relay.Mutation {
     }];
   }
 
-  // getOptimisticResponse() {
-  //   return {
-  //     newTodoEdge: {
-  //       node: {
-  //         content: this.props.content,
-  //       },
-  //     },
-  //   };
-  // }
 }

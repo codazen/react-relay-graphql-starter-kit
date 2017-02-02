@@ -17,6 +17,11 @@ type Props = {
   user: Object
 };
 
+/**
+ * Todo list component
+ * Parent component: TodoApp
+ * Child component: TodoItem
+ */
 class TodoList extends React.Component {
   constructor(props: Props) { // eslint-disable-line
     super(props);
