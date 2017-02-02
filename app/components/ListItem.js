@@ -41,6 +41,9 @@ export default class ListItem extends React.Component {
     this.setState(newState);
   }
 
+  /**
+   * Makes removeItem call
+   */
   handleRemove = () => {
     const {
       removeItem,
@@ -50,12 +53,18 @@ export default class ListItem extends React.Component {
     }
   }
 
+  /**
+   * Changes span to input for inline editing an item's content
+   */
   openEditMode = () => {
     this.setState({
       editStatus: true,
     });
   }
 
+  /**
+   * Makes updateItem call on click out of ListItem through onBlur event listener
+   */
   closeEditMode = () => {
     const {
       updateItem,
