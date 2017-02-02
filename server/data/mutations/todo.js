@@ -36,6 +36,10 @@ const addTodoMutation = mutationWithClientMutationId({
       resolve: async ({ localTodoId }) => {
         const todo = await getTodo(localTodoId);
         const numTodos = await getNumTodos();
+        // Note on offsetToCursor
+        // WARNING: 'cursorForObjectInConnection' returns null and causes
+        // mutation to fail here b/c it uses indexOf. See:
+        // <https://github.com/graphql/graphql-relay-js/issues/29>
         return {
           cursor: offsetToCursor(numTodos - 1),
           node: todo,
