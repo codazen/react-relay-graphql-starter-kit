@@ -1,12 +1,10 @@
 {
   "passPerPreset": true,
-  "plugins": [
-    "transform-flow-strip-types"
-  ],
   "presets": [
     {
       "plugins": [
-        "./build/babelRelayPlugin"
+        "./build/babelRelayPlugin",
+        "transform-flow-strip-types"
       ]
     },
     "react",

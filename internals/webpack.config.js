@@ -18,9 +18,9 @@ module.exports = {
           presets: ['latest', 'react', 'stage-0', {
             plugins: [
               './build/babelRelayPlugin',
+              'transform-flow-strip-types',
             ],
           }],
-          plugins: ['transform-flow-strip-types'],
         },
       },
     ],
