@@ -19,6 +19,26 @@ Core technologies
 Extensions
 ------
 
+Installation
+------
+```
+npm install
+```
+
+Running
+------
+For Windows:
+```
+npm run update-schema
+npm start
+```
+For Linux:
+```
+npm run update-schema
+npm run start:linux
+```
+Go to http://localhost:8080/ to view the application.  
+Go to http://localhost:8080/graphql to view graphiql 
 License
 ------
 MIT

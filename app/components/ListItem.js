@@ -2,16 +2,11 @@
 
 import React from 'react';
 
-type Item = {
-  id: any,
-  content: string,
-};
-
 type Props = {
   content: string, // initial item content
   id: any, // id of item
-  updateItem: (Item) => void, // callback for updating listItem
-  removeItem: (id: any) => void, // callback for removing listItem
+  updateItem: ?Function, // callback for updating listItem
+  removeItem: ?Function, // callback for removing listItem
 };
 
 type State = {
@@ -34,33 +29,52 @@ export default class ListItem extends React.Component {
       content: props.content,
       id: props.id,
     };
-
-    (this:any).openEditMode = this.openEditMode.bind(this);
-    (this:any).closeEditMode = this.closeEditMode.bind(this);
-    (this:any).handleChange = this.handleChange.bind(this);
   }
 
   state: State;
 
   props: Props;
 
-  handleChange(event: any) {
+  handleChange = (event: any) => {
     const newState = {};
     newState[event.target.name] = event.target.value;
     this.setState(newState);
   }
 
-  openEditMode() {
+  /**
+   * Makes removeItem call
+   */
+  handleRemove = () => {
+    const {
+      removeItem,
+    } = this.props;
+    if (removeItem) {
+      removeItem(this.state.id);
+    }
+  }
+
+  /**
+   * Changes span to input for inline editing an item's content
+   */
+  openEditMode = () => {
     this.setState({
       editStatus: true,
     });
   }
 
-  closeEditMode() {
-    this.props.updateItem({
-      id: this.state.id,
-      content: this.state.content,
-    });
+  /**
+   * Makes updateItem call on click out of ListItem through onBlur event listener
+   */
+  closeEditMode = () => {
+    const {
+      updateItem,
+    } = this.props;
+    if (updateItem) {
+      updateItem({
+        id: this.state.id,
+        content: this.state.content,
+      });
+    }
     this.setState({
       editStatus: false,
     });
@@ -79,16 +93,13 @@ export default class ListItem extends React.Component {
               onChange={this.handleChange}
               onBlur={this.closeEditMode}
             />
-            <button onClick={this.closeEditMode}>
-              Save
-            </button>
           </div>
           :
           <div>
             <span onClick={this.props.updateItem ? this.openEditMode : null}>
               {this.state.content}
             </span>
-            <button onClick={() => { this.props.removeItem(this.state.id); }}>
+            <button onClick={this.handleRemove}>
               Delete
             </button>
           </div>

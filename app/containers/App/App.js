@@ -8,10 +8,6 @@ type Props = {
 
 export default class App extends React.Component {
 
-  constructor(props: Props) { // eslint-disable-line no-useless-constructor
-    super(props);
-  }
-
   props: Props;
 
   render() {
