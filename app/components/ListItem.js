@@ -5,8 +5,8 @@ import React from 'react';
 type Props = {
   content: string, // initial item content
   id: any, // id of item
-  updateItem: ?Function,
-  removeItem: ?Function,
+  updateItem: ?Function, // callback for updating listItem
+  removeItem: ?Function, // callback for removing listItem
 };
 
 type State = {
