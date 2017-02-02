@@ -40,11 +40,6 @@ export function addTodo(content: string) {
   return todo.id;
 }
 
-// add some data for a starting point
-addTodo('Todo 1');
-addTodo('Todo 2');
-addTodo('Todo 3');
-
 // get a todo by id
 export function getTodo(id: string) {
   return todosById[id];

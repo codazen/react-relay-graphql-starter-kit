@@ -3,8 +3,8 @@
 import React from 'react';
 import Relay from 'react-relay';
 import ListItem from '../../../components/ListItem';
-import RemoveTodoMutation from '../RemoveTodoMutation';
-import UpdateTodoMutation from '../UpdateTodoMutation';
+import RemoveTodoMutation from '../mutations/RemoveTodoMutation';
+import UpdateTodoMutation from '../mutations/UpdateTodoMutation';
 
 type Todo = {
   id: string,

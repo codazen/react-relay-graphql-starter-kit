@@ -4,7 +4,7 @@ import React from 'react';
 import Relay from 'react-relay';
 import TodoForm from './TodoForm';
 import TodoList from './TodoList';
-import AddTodoMutation from './AddTodoMutation';
+import AddTodoMutation from './mutations/AddTodoMutation';
 
 type Props = {
   user: {
