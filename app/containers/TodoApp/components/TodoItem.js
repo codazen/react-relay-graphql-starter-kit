@@ -17,7 +17,7 @@ type Props = {
     id: string,
   },
   relay: {
-    commitUpdate: Function,
+    commitUpdate: Function, // function to make mutation call to relay store
   },
 };
 
@@ -51,10 +51,14 @@ class TodoItem extends React.Component {
   }
 
   render() {
+    const {
+      content,
+      id,
+    } = this.props.todo;
     return (
       <ListItem
-        content={this.props.todo.content}
-        id={this.props.todo.id}
+        content={content}
+        id={id}
         removeItem={this.handleRemoveTodo}
         updateItem={this.handleUpdateTodo}
       />

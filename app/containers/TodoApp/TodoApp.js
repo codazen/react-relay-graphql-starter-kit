@@ -11,7 +11,7 @@ type Props = {
     todos: any,
   },
   relay: {
-    commitUpdate: Function,
+    commitUpdate: Function, // function to make mutation call to relay store
   },
 };
 
