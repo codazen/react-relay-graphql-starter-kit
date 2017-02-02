@@ -39,4 +39,3 @@ jspm_packages
 public/bundle.js
 
 server/data/schema.graphql
-server/data/schema.json
