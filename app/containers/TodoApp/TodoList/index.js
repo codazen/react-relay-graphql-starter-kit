@@ -14,6 +14,7 @@ type Props = {
   todos: {
     edges: Array<TodoEdge>,
   },
+  user: Object
 };
 
 class TodoList extends React.Component {
@@ -26,7 +27,11 @@ class TodoList extends React.Component {
       <div>
         <h2>Todo List</h2>
         {this.props.todos.edges.map(edge =>
-          <TodoItem key={edge.node.id} todo={edge.node} />,
+          <TodoItem
+            key={edge.node.id}
+            todo={edge.node}
+            user={this.props.user}
+          />,
         )}
       </div>
     );
@@ -43,6 +48,11 @@ export default Relay.createContainer(TodoList, {
             ${TodoItem.getFragment('todo')}
           }
         }
+      }
+    `,
+    user: () => Relay.QL`
+      fragment on User {
+        ${TodoItem.getFragment('user')}
       }
     `,
   },

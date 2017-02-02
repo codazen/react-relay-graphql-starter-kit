@@ -3,16 +3,18 @@
 import {
   GraphQLNonNull,
   GraphQLString,
+  GraphQLID,
 } from 'graphql';
 
 import {
   mutationWithClientMutationId,
   offsetToCursor,
+  fromGlobalId,
 } from 'graphql-relay';
 
 import { userType } from '../types/userType';
 import { TodoEdge } from '../types/todoType';
-import { addTodo, getTodo, getNumTodos, getViewer } from '../database';
+import { addTodo, getTodo, getNumTodos, getViewer, removeTodo } from '../database';
 
 const addTodoMutation = mutationWithClientMutationId({
   name: 'AddTodo',
@@ -46,6 +48,33 @@ const addTodoMutation = mutationWithClientMutationId({
   },
 });
 
+const removeTodoMutation = mutationWithClientMutationId({
+  name: 'RemoveTodo',
+  inputFields: {
+    id: {
+      type: new GraphQLNonNull(GraphQLID),
+    },
+  },
+  outputFields: {
+    deletedTodoId: {
+      type: GraphQLID,
+      resolve: ({ id }) => id,
+    },
+    user: {
+      type: userType,
+      resolve: () => getViewer(),
+    },
+  },
+  mutateAndGetPayload: async ({ id }) => {
+    const localTodoId = fromGlobalId(id).id;
+    removeTodo(localTodoId);
+    return {
+      id,
+    };
+  },
+});
+
 export default {
   addTodo: addTodoMutation,
+  removeTodo: removeTodoMutation,
 };

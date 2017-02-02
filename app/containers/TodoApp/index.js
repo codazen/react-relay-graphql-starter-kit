@@ -30,7 +30,7 @@ class TodoApp extends React.Component {
 
   props: Props;
 
-  handleAddTodo(content) {
+  handleAddTodo(content: string) {
     this.props.relay.commitUpdate(
       new AddTodoMutation({ content, user: this.props.user }),
     );
@@ -41,7 +41,7 @@ class TodoApp extends React.Component {
       <div>
         <h1>Todo App</h1>
         <TodoForm addTodo={this.handleAddTodo} />
-        <TodoList todos={this.props.user.todos} />
+        <TodoList todos={this.props.user.todos} user={this.props.user} />
       </div>
     );
   }
@@ -55,6 +55,7 @@ export default Relay.createContainer(TodoApp, {
         todos(first: 1000) {
           ${TodoList.getFragment('todos')}
         }
+        ${TodoList.getFragment('user')}
         ${AddTodoMutation.getFragment('user')}
       }
     `,
