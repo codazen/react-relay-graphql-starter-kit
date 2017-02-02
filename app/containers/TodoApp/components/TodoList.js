@@ -12,7 +12,7 @@ type TodoEdge = {
 
 type Props = {
   todos: {
-    edges: Array<TodoEdge>,
+    edges: Array<TodoEdge>, // eslint-disable-line
   },
   user: Object
 };
@@ -27,14 +27,18 @@ class TodoList extends React.Component {
   props: Props;
 
   render() {
+    const {
+      todos,
+      user,
+    } = this.props;
     return (
       <div>
         <h2>Todo List</h2>
-        {this.props.todos.edges.map(edge =>
+        {todos.edges.map(edge =>
           <TodoItem
             key={edge.node.id}
             todo={edge.node}
-            user={this.props.user}
+            user={user}
           />,
         )}
       </div>
