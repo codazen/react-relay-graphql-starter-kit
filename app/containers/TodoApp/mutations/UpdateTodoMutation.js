@@ -17,9 +17,13 @@ export default class UpdateTodoMutation extends Relay.Mutation {
   }
 
   getVariables() {
+    const {
+      todo,
+      content,
+    } = this.props;
     return {
-      id: this.props.todo.id,
-      content: this.props.content,
+      id: todo.id,
+      content,
     };
   }
 
