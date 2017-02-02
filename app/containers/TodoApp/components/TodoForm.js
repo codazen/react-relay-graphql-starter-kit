@@ -34,6 +34,9 @@ export default class TodoForm extends React.Component {
     this.setState(newState);
   }
 
+  /**
+   * Makes call to addTodo mutation
+   */
   handleSubmit = (event: any) => {
     const {
       addTodo,
