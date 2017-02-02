@@ -30,14 +30,20 @@ class TodoItem extends React.Component {
 
   props: Props;
 
-  // removeTodo function passed to the ListItem component
+  /**
+   * removeTodo function passed to the ListItem component
+   * @param {id: string} id of todo to be removed
+   */
   handleRemoveTodo = (id: string) => {
     this.props.relay.commitUpdate(
       new RemoveTodoMutation({ id, user: this.props.user }),
     );
   }
 
-  // updateTodo function passed to the ListItem component
+  /**
+   * updateTodo function passed to the ListItem component
+   * @param {todo: Todo} todo node containing id and content
+   */
   handleUpdateTodo = (todo: Todo) => {
     this.props.relay.commitUpdate(
       new UpdateTodoMutation({ todo: this.props.todo, content: todo.content }),

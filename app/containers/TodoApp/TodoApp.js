@@ -24,7 +24,10 @@ class TodoApp extends React.Component {
 
   props: Props;
 
-  // addTodo function passed to the TodoForm
+  /**
+   * addTodo function passed to the TodoForm
+   * @param {content: string} content for new todo
+   */
   handleAddTodo = (content: string) => {
     this.props.relay.commitUpdate(
       new AddTodoMutation({ content, user: this.props.user }),
