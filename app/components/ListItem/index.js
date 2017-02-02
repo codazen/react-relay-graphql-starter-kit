@@ -5,8 +5,8 @@ import React from 'react';
 type Props = {
   content: string, // initial item content
   id: any, // id of item
-  updateItem: ?Function, // eslint-disable-line
-  removeItem: ?Function, // eslint-disable-line
+  updateItem: ?Function,
+  removeItem: ?Function,
 };
 
 type State = {
