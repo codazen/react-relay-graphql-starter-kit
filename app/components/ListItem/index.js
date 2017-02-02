@@ -22,8 +22,6 @@ type State = {
  */
 export default class ListItem extends React.Component {
 
-  static defaultProps: Props;
-
   constructor(props: Props) {
     super(props);
     this.state = {
