@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Relay from 'react-relay';
-import TodoItem from '../TodoItem';
+import TodoItem from './TodoItem';
 
 type TodoEdge = {
   node: {

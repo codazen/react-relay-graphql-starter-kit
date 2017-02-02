@@ -1,4 +1,5 @@
 /* @flow */
+/* eslint class-methods-use-this: "off" */
 
 import Relay from 'react-relay';
 
@@ -11,18 +12,18 @@ export default class UpdateTodoMutation extends Relay.Mutation {
     `,
   };
 
-  static getMutation() {
+  getMutation() {
     return Relay.QL`mutation{ updateTodo }`;
   }
 
-  static getVariables() {
+  getVariables() {
     return {
       id: this.props.todo.id,
       content: this.props.content,
     };
   }
 
-  static getFatQuery() {
+  getFatQuery() {
     return Relay.QL`
       fragment on UpdateTodoPayload @relay(pattern: true) {
         todo {
@@ -32,7 +33,7 @@ export default class UpdateTodoMutation extends Relay.Mutation {
     `;
   }
 
-  static getConfigs() {
+  getConfigs() {
     return [{
       type: 'FIELDS_CHANGE',
       fieldIDs: {

@@ -1,4 +1,5 @@
 /* @flow */
+/* eslint class-methods-use-this: "off" */
 
 import Relay from 'react-relay';
 
@@ -11,17 +12,17 @@ export default class AddTodoMutation extends Relay.Mutation {
     `,
   };
 
-  static getMutation() {
+  getMutation() {
     return Relay.QL`mutation{ addTodo }`;
   }
 
-  static getVariables() {
+  getVariables() {
     return {
       content: this.props.content,
     };
   }
 
-  static getFatQuery() {
+  getFatQuery() {
     return Relay.QL`
       fragment on AddTodoPayload @relay(plural: true) {
         user {
@@ -39,7 +40,7 @@ export default class AddTodoMutation extends Relay.Mutation {
     `;
   }
 
-  static getConfigs() {
+  getConfigs() {
     return [{
       type: 'RANGE_ADD',
       parentName: 'user',
@@ -53,7 +54,7 @@ export default class AddTodoMutation extends Relay.Mutation {
     }];
   }
 
-  static getOptimisticResponse() {
+  getOptimisticResponse() {
     return {
       newTodoEdge: {
         node: {

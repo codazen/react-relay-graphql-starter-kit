@@ -1,4 +1,5 @@
 /* @flow */
+/* eslint class-methods-use-this: "off" */
 
 import Relay from 'react-relay';
 
@@ -11,17 +12,17 @@ export default class RemoveTodoMutation extends Relay.Mutation {
     `,
   };
 
-  static getMutation() {
+  getMutation() {
     return Relay.QL`mutation{ removeTodo }`;
   }
 
-  static getVariables() {
+  getVariables() {
     return {
       id: this.props.id,
     };
   }
 
-  static getFatQuery() {
+  getFatQuery() {
     return Relay.QL`
       fragment on RemoveTodoPayload @relay(plural: true) {
         deletedTodoId
@@ -30,7 +31,7 @@ export default class RemoveTodoMutation extends Relay.Mutation {
     `;
   }
 
-  static getConfigs() {
+  getConfigs() {
     return [{
       type: 'NODE_DELETE',
       parentName: 'user',

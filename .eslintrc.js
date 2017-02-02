@@ -5,7 +5,6 @@ module.exports = {
   ],
   "extends": "airbnb",
   "rules": {
-    "class-methods-use-this": ["off"],
     "jsx-a11y/no-static-element-interactions": ["off"],
     "jsx-quotes": ["off"],
     "linebreak-style": ["off"],
