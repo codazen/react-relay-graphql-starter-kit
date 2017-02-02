@@ -12,6 +12,11 @@ export class User {
 // main viewer (default user)
 const VIEWER = 'viewer';
 
+/**
+ * The viewer is the default user for the application.
+ * In a situation with multiple users, additional id processing would occur in order
+ * to return the proper user in a query.
+ */
 const viewer = new User();
 viewer.id = VIEWER;
 
@@ -31,6 +36,7 @@ export const todoIdsByUser = {
 // global todo id
 let nextTodoId = 0;
 
+// add a todo
 export function addTodo(content: string) {
   const todo = new Todo();
   todo.id = `${nextTodoId++}`;
@@ -60,6 +66,7 @@ export function getTodos() {
   return todoIdsByUser[VIEWER].map(id => todosById[id]);
 }
 
+// get number of todos for cursor
 export function getNumTodos() {
   return todoIdsByUser[VIEWER].length;
 }
