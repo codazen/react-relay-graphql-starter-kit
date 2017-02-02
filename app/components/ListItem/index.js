@@ -91,9 +91,6 @@ export default class ListItem extends React.Component {
               onChange={this.handleChange}
               onBlur={this.closeEditMode}
             />
-            <button onClick={this.closeEditMode}>
-              Save
-            </button>
           </div>
           :
           <div>
