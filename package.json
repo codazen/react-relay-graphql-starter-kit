@@ -11,7 +11,6 @@
     "start:windows": "start nodemon --exec babel-node server & start webpack --watch --config internals/webpack.config.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-schema": "./node_modules/.bin/babel-node ./server/scripts/updateSchema.js",
-    "lint": "jshint .",
     "validate": "npm ls"
   },
   "pre-commit": [
