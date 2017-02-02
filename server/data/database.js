@@ -65,6 +65,10 @@ export function getTodos() {
   return todoIdsByUser[VIEWER].map(id => todosById[id]);
 }
 
+export function getNumTodos() {
+  return todoIdsByUser[VIEWER].length;
+}
+
 // remove todo from viewer user
 export function removeTodo(id: string) {
   const index = todoIdsByUser[VIEWER].indexOf(id);
