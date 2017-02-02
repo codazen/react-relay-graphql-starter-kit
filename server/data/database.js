@@ -5,6 +5,7 @@ export class Todo {
   id: string;
   content: string;
 }
+
 export class User {
   id: string;
 }
