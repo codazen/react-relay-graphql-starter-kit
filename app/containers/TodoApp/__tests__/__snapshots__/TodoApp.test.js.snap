@@ -1,0 +1,146 @@
+exports[`TodoApp component Renders correctly 1`] = `
+<div
+  className="todo-app-component">
+  <h1>
+    TODO APP
+  </h1>
+  <TodoForm
+    addTodo={[Function]} />
+  <Relay(TodoList)
+    todos={
+      Object {
+        "edges": Array [
+          Object {
+            "node": Object {
+              "content": "quis molestiae tempora est omnis porro porro",
+              "id": "713",
+            },
+          },
+          Object {
+            "node": Object {
+              "content": "nihil omnis reiciendis velit nobis culpa deleniti",
+              "id": "491",
+            },
+          },
+          Object {
+            "node": Object {
+              "content": "reprehenderit in nisi et qui quia odio",
+              "id": "140",
+            },
+          },
+          Object {
+            "node": Object {
+              "content": "veritatis eligendi in deserunt id harum sit",
+              "id": "245",
+            },
+          },
+          Object {
+            "node": Object {
+              "content": "dolor dicta provident quo provident molestiae harum",
+              "id": "440",
+            },
+          },
+          Object {
+            "node": Object {
+              "content": "pariatur quos est quod laborum ea quisquam",
+              "id": "298",
+            },
+          },
+          Object {
+            "node": Object {
+              "content": "quia et commodi autem incidunt ut exercitationem",
+              "id": "417",
+            },
+          },
+          Object {
+            "node": Object {
+              "content": "et voluptas explicabo omnis iusto doloremque et",
+              "id": "988",
+            },
+          },
+          Object {
+            "node": Object {
+              "content": "quos sequi molestiae beatae enim necessitatibus molestiae",
+              "id": "174",
+            },
+          },
+          Object {
+            "node": Object {
+              "content": "saepe eligendi earum excepturi et laudantium fuga",
+              "id": "750",
+            },
+          },
+        ],
+      }
+    }
+    user={
+      Object {
+        "id": "696",
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "quis molestiae tempora est omnis porro porro",
+                "id": "713",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "nihil omnis reiciendis velit nobis culpa deleniti",
+                "id": "491",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "reprehenderit in nisi et qui quia odio",
+                "id": "140",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veritatis eligendi in deserunt id harum sit",
+                "id": "245",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolor dicta provident quo provident molestiae harum",
+                "id": "440",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "pariatur quos est quod laborum ea quisquam",
+                "id": "298",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia et commodi autem incidunt ut exercitationem",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "et voluptas explicabo omnis iusto doloremque et",
+                "id": "988",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quos sequi molestiae beatae enim necessitatibus molestiae",
+                "id": "174",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "saepe eligendi earum excepturi et laudantium fuga",
+                "id": "750",
+              },
+            },
+          ],
+        },
+      }
+    } />
+</div>
+`;

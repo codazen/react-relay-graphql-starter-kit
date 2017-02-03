@@ -1,0 +1,37 @@
+exports[`TodoForm component Tests with addTodo prop Renders correctly 1`] = `
+<div
+  className="todo-form-component">
+  <form
+    onSubmit={[Function]}>
+    <input
+      name="content"
+      onChange={[Function]}
+      placeholder="Add a task"
+      type="text"
+      value="" />
+    <button
+      action="submit">
+      +
+    </button>
+  </form>
+</div>
+`;
+
+exports[`TodoForm component Tests with undefined addTodo prop Renders correctly 1`] = `
+<div
+  className="todo-form-component">
+  <form
+    onSubmit={[Function]}>
+    <input
+      name="content"
+      onChange={[Function]}
+      placeholder="Add a task"
+      type="text"
+      value="" />
+    <button
+      action="submit">
+      +
+    </button>
+  </form>
+</div>
+`;

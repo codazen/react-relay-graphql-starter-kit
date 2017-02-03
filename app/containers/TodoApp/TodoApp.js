@@ -45,6 +45,8 @@ class TodoApp extends React.Component {
   }
 }
 
+exports.TodoApp = TodoApp;
+
 export default Relay.createContainer(TodoApp, {
   fragments: {
     user: () => Relay.QL`

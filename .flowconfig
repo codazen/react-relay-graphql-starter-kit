@@ -6,3 +6,6 @@
 [libs]
 
 [options]
+module.system.node.resolve_dirname=app
+module.system.node.resolve_dirname=server
+module.system.node.resolve_dirname=node_modules
