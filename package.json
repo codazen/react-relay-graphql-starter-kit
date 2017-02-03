@@ -7,8 +7,13 @@
     "eslint": "eslint . --ext .js",
     "flow": "flow",
     "start": "npm run start:windows",
+<<<<<<< HEAD
     "start:linux": "nodemon --exec ./node_modules/.bin/babel-node server & webpack --watch --config internals/webpack.config.js",
     "start:windows": "start nodemon --exec ./node_modules/.bin/babel-node server & start webpack --watch --config internals/webpack.config.js",
+=======
+    "start:linux": "nodemon --exec babel-node server & webpack --watch",
+    "start:windows": "start nodemon --exec babel-node server & start webpack --watch",
+>>>>>>> Moved webpack config to root
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-schema": "./node_modules/.bin/babel-node ./server/scripts/updateSchema.js"
   },
