@@ -5,6 +5,7 @@
   "main": "server.js",
   "scripts": {
     "eslint": "eslint . --ext .js",
+    "stylelint": "stylelint app/**/*.css",
     "flow": "flow",
     "start": "npm run start:windows",
     "start:linux": "nodemon --exec babel-node server & webpack --watch",
@@ -16,6 +17,7 @@
   },
   "pre-commit": [
     "eslint",
+    "stylelint",
     "flow"
   ],
   "repository": {
@@ -62,6 +64,9 @@
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "precommit-hook": "^3.0.0",
+    "stylelint": "^7.8.0",
+    "stylelint-config-standard": "^16.0.0",
+    "stylelint-order": "^0.2.2",
     "webpack": "^2.2.1"
   }
 }
