@@ -1,14 +1,14 @@
 {
   "passPerPreset": true,
   "presets": [
+    "latest",
+    "react",
+    "stage-1",
     {
       "plugins": [
         "./build/babelRelayPlugin",
         "transform-flow-strip-types"
       ]
     },
-    "react",
-    "latest",
-    "stage-0"
   ]
 }

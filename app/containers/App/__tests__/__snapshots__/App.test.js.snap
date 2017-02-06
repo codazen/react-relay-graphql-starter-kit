@@ -1,0 +1,4 @@
+exports[`App component Renders correctly 1`] = `
+<div
+  className="container" />
+`;
