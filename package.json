@@ -67,6 +67,7 @@
     "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "flow-bin": "^0.38.0",
     "fs": "0.0.1-security",
+    "graphql-tools": "^0.10.0",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^18.1.0",
     "jest-cli": "^18.1.0",
