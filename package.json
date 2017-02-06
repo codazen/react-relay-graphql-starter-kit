@@ -10,7 +10,9 @@
     "start:linux": "nodemon --exec babel-node server & webpack --watch",
     "start:windows": "start nodemon --exec babel-node server & start webpack --watch",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "update-schema": "./node_modules/.bin/babel-node ./server/scripts/updateSchema.js"
+    "update-schema": "./node_modules/.bin/babel-node ./server/scripts/updateSchema.js",
+    "lint": "jshint .",
+    "validate": "npm ls"
   },
   "pre-commit": [
     "eslint",
@@ -47,17 +49,19 @@
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
+    "css-loader": "^0.26.1",
     "eslint": "^3.13.0",
     "eslint-config-airbnb": "^14.0.0",
     "eslint-plugin-flowtype": "^2.30.0",
     "eslint-plugin-import": "^2.2.0",
     "eslint-plugin-jsx-a11y": "^3.0.2",
     "eslint-plugin-react": "^6.9.0",
+    "extract-text-webpack-plugin": "^2.0.0-rc.3",
     "flow-bin": "^0.38.0",
     "fs": "0.0.1-security",
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "precommit-hook": "^3.0.0",
-    "webpack": "^1.14.0"
+    "webpack": "^2.2.1"
   }
 }
