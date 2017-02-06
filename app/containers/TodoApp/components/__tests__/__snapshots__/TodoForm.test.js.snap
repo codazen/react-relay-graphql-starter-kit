@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 exports[`TodoForm component Tests with addTodo prop Renders correctly 1`] = `
 <div
   className="todo-form-component">
@@ -33,5 +34,38 @@ exports[`TodoForm component Tests with undefined addTodo prop Renders correctly 
       +
     </button>
   </form>
+=======
+exports[`TodoForm component Tests with addTodo prop Renders correctly with addTodo prop 1`] = `
+<div>
+  <h2>
+    Todo Form
+  </h2>
+  <input
+    name="content"
+    onChange={[Function]}
+    type="text"
+    value="" />
+  <button
+    onClick={[Function]}>
+    + Todo
+  </button>
+</div>
+`;
+
+exports[`TodoForm component Tests with undefined addTodo prop Renders correctly without addTodo prop 1`] = `
+<div>
+  <h2>
+    Todo Form
+  </h2>
+  <input
+    name="content"
+    onChange={[Function]}
+    type="text"
+    value="" />
+  <button
+    onClick={[Function]}>
+    + Todo
+  </button>
+>>>>>>> Added tests for TodoForm
 </div>
 `;
