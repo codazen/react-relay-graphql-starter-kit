@@ -11,9 +11,7 @@
     "start:linux": "nodemon --exec babel-node server & webpack --watch",
     "start:windows": "start nodemon --exec babel-node server & start webpack --watch",
     "test": "jest --config .jestconfig.json",
-    "update-schema": "babel-node ./server/scripts/updateSchema.js",
-    "lint": "jshint .",
-    "validate": "npm ls"
+    "update-schema": "babel-node ./server/scripts/updateSchema.js"
   },
   "pre-commit": [
     "eslint",
