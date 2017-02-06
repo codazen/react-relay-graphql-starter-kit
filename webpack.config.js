@@ -1,28 +1,40 @@
 /* @flow */
 
 const path = require('path');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
+const webpack = require('webpack');
 
-module.exports = {
+const config = {
   entry: './app/app.js',
   output: {
-    path: path.resolve(process.cwd(), 'public'),
+    path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
   },
   module: {
-    loaders: [
+    rules: [
       {
         test: /\.js$/,
-        loader: 'babel-loader',
+        use: 'babel-loader',
         exclude: /node_modules/,
-        query: {
-          presets: ['latest', 'react', 'stage-0', {
-            plugins: [
-              './build/babelRelayPlugin',
-              'transform-flow-strip-types',
-            ],
-          }],
-        },
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract({
+          loader: 'css-loader',
+          options: {
+            minimize: true || { safe: true },
+          },
+        }),
       },
     ],
   },
+  plugins: [
+    new ExtractTextPlugin('styles.css'),
+  ],
 };
+
+if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(new webpack.optimize.UglifyJsPlugin());
+}
+
+module.exports = config;
