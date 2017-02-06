@@ -10,7 +10,7 @@
     "start:linux": "nodemon --exec babel-node server & webpack --watch",
     "start:windows": "start nodemon --exec babel-node server & start webpack --watch",
     "test": "jest --config .jestconfig.json",
-    "update-schema": "./node_modules/.bin/babel-node ./server/scripts/updateSchema.js"
+    "update-schema": "babel-node ./server/scripts/updateSchema.js"
   },
   "pre-commit": [
     "eslint",
@@ -45,6 +45,7 @@
     "babel-jest": "^18.0.0",
     "babel-loader": "^6.2.10",
     "babel-plugin-transform-flow-strip-types": "^6.22.0",
+    "babel-polyfill": "^6.22.0",
     "babel-preset-latest": "^6.22.0",
     "babel-preset-react": "^6.22.0",
     "babel-preset-stage-0": "^6.22.0",
@@ -58,7 +59,9 @@
     "eslint-plugin-react": "^6.9.0",
     "flow-bin": "^0.38.0",
     "fs": "0.0.1-security",
+    "identity-obj-proxy": "^3.0.0",
     "jest": "^18.1.0",
+    "jest-cli": "^18.1.0",
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "precommit-hook": "^3.0.0",
