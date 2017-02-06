@@ -8,10 +8,48 @@
 }
 
 .todo-app-component {
-  padding: 60px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  padding: 15vh 10vw;
   color: #ffffff;
 }
 
+button,
+input {
+  border: 0;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
 .todo-app-component h1 {
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.todo-form-component form {
+  width: 30vw;
+  min-width: 15em;
+  max-width: 30em;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.todo-form-component input {
+  width: calc(100% - 2.5em);
+  height: 2.5em;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.todo-form-component button {
+  width: 2.5em;
+  height: 2.5em;
+  font-size: 2em;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
 }
