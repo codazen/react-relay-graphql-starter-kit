@@ -1,4 +1,5 @@
 @import 'normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .container {
   display: flex;
@@ -11,7 +12,9 @@
   display: flex;
   flex-flow: column nowrap;
   align-items: center;
-  padding: 15vh 10vw;
+  margin: 15vh 10vw;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
   color: #ffffff;
 }
 
@@ -49,7 +52,42 @@ input:focus {
 .todo-form-component button {
   width: 2.5em;
   height: 2.5em;
-  font-size: 2em;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
+}
+
+.todo-list-component {
+  width: 28vw;
+  min-width: 13em;
+  max-width: 28em;
+  margin: 1.5em 0;
+}
+
+.list-item-component {
+  width: 100%;
+  margin: 12px 0;
+}
+
+.list-item-component input {
+  width: 100%;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.list-item-component div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-item-component span {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+}
+
+.list-item-component button {
+  font-weight: bold;
+  color: #ffffff;
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  background: transparent;
 }
