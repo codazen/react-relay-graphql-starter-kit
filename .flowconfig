@@ -6,4 +6,5 @@
 [libs]
 
 [options]
-module.name_mapper='^components\(.*\)$' -> '<PROJECT_ROOT>/app/components/\1'
+module.system.node.resolve_dirname=app
+module.system.node.resolve_dirname=node_modules
