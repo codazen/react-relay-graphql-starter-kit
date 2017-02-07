@@ -46,6 +46,8 @@ class TodoList extends React.Component {
   }
 }
 
+exports.TodoList = TodoList;
+
 export default Relay.createContainer(TodoList, {
   fragments: {
     todos: () => Relay.QL`
