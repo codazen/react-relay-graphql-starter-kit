@@ -59,7 +59,7 @@ export default class TodoForm extends React.Component {
             type='text'
             value={this.state.content}
             name='content'
-            placeholder='Add a todo'
+            placeholder='Add a task'
             onChange={this.handleChange}
           />
           <button action='submit'>
