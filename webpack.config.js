@@ -31,6 +31,13 @@ const config = {
   plugins: [
     new ExtractTextPlugin('styles.css'),
   ],
+  resolve: {
+    modules: [
+      'app',
+      'server',
+      'node_modules',
+    ],
+  },
 };
 
 if (process.env.NODE_ENV === 'production') {

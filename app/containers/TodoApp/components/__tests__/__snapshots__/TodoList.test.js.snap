@@ -1,8 +1,6 @@
 exports[`TodoList component Tests with undefined todos and user props Renders correctly without todos and user props 1`] = `
-<div>
-  <h2>
-    Todo List
-  </h2>
+<div
+  className="todo-list-component">
   <Relay(TodoItem)
     todo={
       Object {

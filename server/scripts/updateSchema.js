@@ -25,5 +25,5 @@ import { schema } from '../data/schema';
 // Save user readable type system shorthand of schema
 fs.writeFileSync(
   path.join(__dirname, '../data/schema.graphql'),
-  `export default \`\n${printSchema(schema)}\nschema {\n\tquery: Query\n\tmutation: Mutation\n}\`;`,
+  `module.exports = \`\n${printSchema(schema)}\nschema {\n\tquery: Query\n\tmutation: Mutation\n}\`;`,
 );

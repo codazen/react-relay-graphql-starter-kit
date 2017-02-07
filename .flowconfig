@@ -6,3 +6,4 @@
 [libs]
 
 [options]
+module.name_mapper='^components\(.*\)$' -> '<PROJECT_ROOT>/app/components/\1'
