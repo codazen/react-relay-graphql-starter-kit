@@ -86,7 +86,7 @@ export default class ListItem extends React.Component {
         {this.state.editStatus ?
           <input
             autoFocus
-            type='submit'
+            type='text'
             value={this.state.content}
             name='content'
             onChange={this.handleChange}
