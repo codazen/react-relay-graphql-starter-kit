@@ -1,0 +1,17 @@
+@import 'normalize.css';
+
+.container {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background: rgb(35, 193, 241);
+}
+
+.todo-app-component {
+  padding: 60px;
+  color: #ffffff;
+}
+
+.todo-app-component h1 {
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+}

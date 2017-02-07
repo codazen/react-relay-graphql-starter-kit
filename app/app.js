@@ -7,6 +7,8 @@ import { browserHistory, Router, applyRouterMiddleware } from 'react-router';
 import useRelay from 'react-router-relay';
 import routes from './routes';
 
+import './styles/styles.css';
+
 ReactDOM.render(
   <Router
     environment={Relay.Store}
@@ -14,5 +16,5 @@ ReactDOM.render(
     routes={routes}
     render={applyRouterMiddleware(useRelay)}
   />,
-  document.getElementById('root'), // eslint-disable-line no-undef
+  document.getElementById('root'),
 );
