@@ -82,25 +82,23 @@ export default class ListItem extends React.Component {
 
   render() {
     return (
-      <div>
+      <div className='list-item-component'>
         {this.state.editStatus ?
-          <div>
-            <input
-              autoFocus
-              type='text'
-              value={this.state.content}
-              name='content'
-              onChange={this.handleChange}
-              onBlur={this.closeEditMode}
-            />
-          </div>
+          <input
+            autoFocus
+            type='text'
+            value={this.state.content}
+            name='content'
+            onChange={this.handleChange}
+            onBlur={this.closeEditMode}
+          />
           :
           <div>
             <span onClick={this.props.updateItem ? this.openEditMode : null}>
               {this.state.content}
             </span>
             <button onClick={this.handleRemove}>
-              Delete
+              x
             </button>
           </div>
         }

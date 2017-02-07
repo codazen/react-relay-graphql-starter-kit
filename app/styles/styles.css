@@ -1,17 +1,100 @@
 @import 'normalize.css';
+@import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
 .container {
   display: flex;
   justify-content: center;
-  height: 100vh;
+  min-height: 100vh;
   background: rgb(35, 193, 241);
 }
 
 .todo-app-component {
-  padding: 60px;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  margin: 15vh 10vw;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 20px;
   color: #ffffff;
 }
 
+button,
+input {
+  border: 0;
+}
+
+button:focus,
+input:focus {
+  outline: none;
+}
+
 .todo-app-component h1 {
-  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.todo-form-component form {
+  width: 30vw;
+  min-width: 15em;
+  max-width: 30em;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.todo-form-component input {
+  width: calc(100% - 2.5em);
+  height: 2.5em;
+  box-sizing: border-box;
+  padding: 0 12px;
+  border-top-left-radius: 2px;
+  border-bottom-left-radius: 2px;
+}
+
+.todo-form-component button {
+  width: 2.5em;
+  height: 2.5em;
+  border-top-right-radius: 2px;
+  border-bottom-right-radius: 2px;
+}
+
+.todo-list-component {
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  width: 28vw;
+  min-width: 13em;
+  max-width: 28em;
+  margin: 1.5em 0;
+}
+
+.list-item-component {
+  width: 100%;
+  padding: 6px;
+  margin: 6px 0;
+  color: #000000;
+  background: #ffffff;
+  border-radius: 2px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+}
+
+.list-item-component input {
+  width: 100%;
+}
+
+.list-item-component div {
+  display: flex;
+  justify-content: space-between;
+}
+
+.list-item-component span {
+  width: calc(100% - 1.25em);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.list-item-component button {
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+  cursor: pointer;
+  background: transparent;
 }

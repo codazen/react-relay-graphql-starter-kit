@@ -53,17 +53,19 @@ export default class TodoForm extends React.Component {
 
   render() {
     return (
-      <div>
-        <h2>Todo Form</h2>
-        <input
-          type='text'
-          value={this.state.content}
-          name='content'
-          onChange={this.handleChange}
-        />
-        <button onClick={this.handleSubmit}>
-          + Todo
-        </button>
+      <div className='todo-form-component'>
+        <form onSubmit={this.handleSubmit}>
+          <input
+            type='text'
+            value={this.state.content}
+            name='content'
+            placeholder='Add a task'
+            onChange={this.handleChange}
+          />
+          <button action='submit'>
+            +
+          </button>
+        </form>
       </div>
     );
   }
