@@ -18,6 +18,10 @@
   color: #ffffff;
 }
 
+.todo-app-component input {
+  font-family: 'Open Sans', sans-serif;
+}
+
 button,
 input {
   border: 0;
@@ -45,6 +49,7 @@ input:focus {
   height: 2.5em;
   box-sizing: border-box;
   padding: 0 12px;
+  vertical-align: top;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
@@ -52,6 +57,7 @@ input:focus {
 .todo-form-component button {
   width: 2.5em;
   height: 2.5em;
+  cursor: pointer;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
@@ -90,7 +96,7 @@ input:focus {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  cursor: pointer;
+  cursor: text;
 }
 
 .list-item-component button {
