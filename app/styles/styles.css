@@ -1,6 +1,17 @@
 @import 'normalize.css';
 @import url('https://fonts.googleapis.com/css?family=Open+Sans');
 
+/* override normalize.css defaults for font-family */
+html,
+body,
+button,
+input,
+optgroup,
+select,
+textarea {
+  font-family: 'Open Sans', sans-serif; /* 1 */
+}
+
 .container {
   display: flex;
   justify-content: center;
@@ -13,7 +24,6 @@
   flex-flow: column nowrap;
   align-items: center;
   margin: 15vh 10vw;
-  font-family: 'Open Sans', sans-serif;
   font-size: 20px;
   color: #ffffff;
 }
@@ -45,6 +55,7 @@ input:focus {
   height: 2.5em;
   box-sizing: border-box;
   padding: 0 12px;
+  vertical-align: top;
   border-top-left-radius: 2px;
   border-bottom-left-radius: 2px;
 }
@@ -52,6 +63,7 @@ input:focus {
 .todo-form-component button {
   width: 2.5em;
   height: 2.5em;
+  cursor: pointer;
   border-top-right-radius: 2px;
   border-bottom-right-radius: 2px;
 }
@@ -90,7 +102,7 @@ input:focus {
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
-  cursor: pointer;
+  cursor: text;
 }
 
 .list-item-component button {
