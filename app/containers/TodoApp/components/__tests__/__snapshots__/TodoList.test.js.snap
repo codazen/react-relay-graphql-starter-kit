@@ -1,759 +1,3 @@
-exports[`TodoList component Tests with 0 todos Renders correctly 1`] = `
-<div
-  className="todo-list-component">
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "similique sed corporis voluptatem dolores esse soluta",
-        "id": "624",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-        "id": "866",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-        "id": "519",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "veniam perspiciatis et nisi aut corporis nisi",
-        "id": "603",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "est soluta accusamus officiis ut excepturi blanditiis",
-        "id": "417",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "enim qui quo fuga enim tempore non",
-        "id": "669",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "quia dicta ipsam omnis necessitatibus et sit",
-        "id": "842",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-        "id": "194",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-        "id": "627",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-  <Relay(TodoItem)
-    todo={
-      Object {
-        "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-        "id": "557",
-      }
-    }
-    user={
-      Object {
-        "todos": Object {
-          "edges": Array [
-            Object {
-              "node": Object {
-                "content": "similique sed corporis voluptatem dolores esse soluta",
-                "id": "624",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
-                "id": "866",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
-                "id": "519",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "veniam perspiciatis et nisi aut corporis nisi",
-                "id": "603",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "est soluta accusamus officiis ut excepturi blanditiis",
-                "id": "417",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "enim qui quo fuga enim tempore non",
-                "id": "669",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "quia dicta ipsam omnis necessitatibus et sit",
-                "id": "842",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
-                "id": "194",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
-                "id": "627",
-              },
-            },
-            Object {
-              "node": Object {
-                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
-                "id": "557",
-              },
-            },
-          ],
-        },
-      }
-    } />
-</div>
-`;
-
 exports[`TodoList component Tests with 10 todos Renders correctly 1`] = `
 <div
   className="todo-list-component">
@@ -1501,6 +745,762 @@ exports[`TodoList component Tests with 10 todos Renders correctly 1`] = `
               "node": Object {
                 "content": "placeat saepe eligendi earum excepturi et laudantium",
                 "id": "426",
+              },
+            },
+          ],
+        },
+      }
+    } />
+</div>
+`;
+
+exports[`TodoList component Tests with no todos Renders correctly 1`] = `
+<div
+  className="todo-list-component">
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "similique sed corporis voluptatem dolores esse soluta",
+        "id": "624",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
+              },
+            },
+          ],
+        },
+      }
+    } />
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+        "id": "866",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
+              },
+            },
+          ],
+        },
+      }
+    } />
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+        "id": "519",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
+              },
+            },
+          ],
+        },
+      }
+    } />
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "veniam perspiciatis et nisi aut corporis nisi",
+        "id": "603",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
+              },
+            },
+          ],
+        },
+      }
+    } />
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "est soluta accusamus officiis ut excepturi blanditiis",
+        "id": "417",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
+              },
+            },
+          ],
+        },
+      }
+    } />
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "enim qui quo fuga enim tempore non",
+        "id": "669",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
+              },
+            },
+          ],
+        },
+      }
+    } />
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "quia dicta ipsam omnis necessitatibus et sit",
+        "id": "842",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
+              },
+            },
+          ],
+        },
+      }
+    } />
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+        "id": "194",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
+              },
+            },
+          ],
+        },
+      }
+    } />
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+        "id": "627",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
+              },
+            },
+          ],
+        },
+      }
+    } />
+  <Relay(TodoItem)
+    todo={
+      Object {
+        "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+        "id": "557",
+      }
+    }
+    user={
+      Object {
+        "todos": Object {
+          "edges": Array [
+            Object {
+              "node": Object {
+                "content": "similique sed corporis voluptatem dolores esse soluta",
+                "id": "624",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "repudiandae magnam aut atque dolores voluptatibus ut",
+                "id": "866",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "iusto laborum placeat quia deleniti dolorem quibusdam",
+                "id": "519",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "veniam perspiciatis et nisi aut corporis nisi",
+                "id": "603",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "est soluta accusamus officiis ut excepturi blanditiis",
+                "id": "417",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "enim qui quo fuga enim tempore non",
+                "id": "669",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "quia dicta ipsam omnis necessitatibus et sit",
+                "id": "842",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "dolores sunt numquam aspernatur occaecati rerum neque",
+                "id": "194",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "sint quisquam asperiores sit voluptatum deserunt enim",
+                "id": "627",
+              },
+            },
+            Object {
+              "node": Object {
+                "content": "molestias nesciunt veniam sequi omnis eligendi aut",
+                "id": "557",
               },
             },
           ],

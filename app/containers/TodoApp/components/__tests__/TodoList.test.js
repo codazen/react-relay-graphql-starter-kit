@@ -7,11 +7,16 @@ import casual from 'casual';
 import schemaString from 'data/schema.graphql';
 import { TodoList } from '../TodoList';
 
+// setup React as global variable
 global.React = React;
+
+// use consistent seed for snapshot matching
 casual.seed(123);
 
+// create schema based on server/data/schema.graphql
 const schema = makeExecutableSchema({ typeDefs: schemaString });
 
+// mock data
 const numListItems = 10;
 const mocks = {
   TodoConnection: () => ({
@@ -23,7 +28,7 @@ const mocks = {
   }),
 };
 
-// Add mocks, modifies schema in place
+// add mocks to schema in place
 addMockFunctionsToSchema({
   schema,
   mocks,
