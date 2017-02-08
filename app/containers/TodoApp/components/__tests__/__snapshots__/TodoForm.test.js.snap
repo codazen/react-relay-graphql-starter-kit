@@ -1,4 +1,4 @@
-exports[`TodoForm component Tests with addTodo prop Renders correctly with addTodo prop 1`] = `
+exports[`TodoForm component Tests with addTodo prop Renders correctly 1`] = `
 <div
   className="todo-form-component">
   <form
@@ -17,7 +17,7 @@ exports[`TodoForm component Tests with addTodo prop Renders correctly with addTo
 </div>
 `;
 
-exports[`TodoForm component Tests with undefined addTodo prop Renders correctly without addTodo prop 1`] = `
+exports[`TodoForm component Tests with undefined addTodo prop Renders correctly 1`] = `
 <div
   className="todo-form-component">
   <form

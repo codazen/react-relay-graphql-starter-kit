@@ -16,9 +16,10 @@ describe('TodoForm component', () => {
   describe('Tests with undefined addTodo prop', () => {
     beforeEach(() => {
       todoForm = shallow(<TodoForm />);
+      addTodo.mockClear();
     });
 
-    it('Renders correctly without addTodo prop', () => {
+    it('Renders correctly', () => {
       expect(shallowToJson(todoForm)).toMatchSnapshot();
     });
 
@@ -52,14 +53,23 @@ describe('TodoForm component', () => {
         expect(todoForm.instance().state.content).toBe('');
       });
     });
+
+    describe('addTodo functionality', () => {
+      it('doesn\'t call addTodo on form submit', () => {
+        todoForm.find('form').simulate('submit', { preventDefault: () => {} });
+        expect(addTodo).not.toHaveBeenCalled();
+        expect(todoForm.instance().state.content).toBe('');
+      });
+    });
   });
 
   describe('Tests with addTodo prop', () => {
     beforeEach(() => {
       todoForm = shallow(<TodoForm addTodo={addTodo} />);
+      addTodo.mockClear();
     });
 
-    it('Renders correctly with addTodo prop', () => {
+    it('Renders correctly', () => {
       expect(shallowToJson(todoForm)).toMatchSnapshot();
     });
 
@@ -87,10 +97,18 @@ describe('TodoForm component', () => {
         };
       });
 
-      it('handles submit without addTodo prop', () => {
+      it('handles submit with addTodo prop', () => {
         todoForm.instance().state.content = 'testValue';
         todoForm.instance().handleSubmit(event);
         expect(addTodo).toHaveBeenCalledWith('testValue');
+        expect(todoForm.instance().state.content).toBe('');
+      });
+    });
+
+    describe('addTodo functionality', () => {
+      it('calls addTodo on form submit', () => {
+        todoForm.find('form').simulate('submit', { preventDefault: () => {} });
+        expect(addTodo).toHaveBeenCalled();
         expect(todoForm.instance().state.content).toBe('');
       });
     });
