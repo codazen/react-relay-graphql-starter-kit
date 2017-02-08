@@ -18,7 +18,8 @@
   "pre-commit": [
     "eslint",
     "stylelint",
-    "flow"
+    "flow",
+    "test"
   ],
   "repository": {
     "type": "git",
