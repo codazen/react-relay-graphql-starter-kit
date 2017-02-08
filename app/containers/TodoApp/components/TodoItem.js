@@ -66,6 +66,8 @@ class TodoItem extends React.Component {
   }
 }
 
+exports.TodoItem = TodoItem;
+
 export default Relay.createContainer(TodoItem, {
   fragments: {
     todo: () => Relay.QL`
