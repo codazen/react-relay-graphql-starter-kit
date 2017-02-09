@@ -82,13 +82,13 @@ export default class ListItem extends React.Component {
 
   render() {
     return (
-      <div className='list-item-component'>
+      <div className="list-item-component">
         {this.state.editStatus ?
           <input
             autoFocus
-            type='text'
+            type="text"
             value={this.state.content}
-            name='content'
+            name="content"
             onChange={this.handleChange}
             onBlur={this.closeEditMode}
           />
