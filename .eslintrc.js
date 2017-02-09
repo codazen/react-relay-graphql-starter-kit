@@ -15,7 +15,6 @@ module.exports = {
     "import/no-unresolved": ["off"],
     "import/no-extraneous-dependencies": ["off"],
     "jsx-a11y/no-static-element-interactions": ["off"],
-    "jsx-quotes": ["off"],
     "linebreak-style": ["off"],
     "no-plusplus": ["off"],
     "quotes": ["error", "single"],

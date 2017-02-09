@@ -8,7 +8,7 @@ import TodoApp from './containers/TodoApp/TodoApp';
 import userQuery from './queries/userQuery';
 
 export default (
-  <Route path='/' component={App}>
+  <Route path="/" component={App}>
     <IndexRoute component={TodoApp} queries={userQuery} />
   </Route>
 );
