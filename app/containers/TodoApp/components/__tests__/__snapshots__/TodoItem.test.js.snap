@@ -1,0 +1,7 @@
+exports[`TodoItem component Renders correctly 1`] = `
+<ListItem
+  content="quo quis molestiae tempora est omnis porro"
+  id="696"
+  removeItem={[Function]}
+  updateItem={[Function]} />
+`;

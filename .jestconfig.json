@@ -1,0 +1,21 @@
+{
+  "moduleNameMapper": {
+    "\\.(scss|sass|css|less)$": "identity-obj-proxy"
+  },
+  "collectCoverageFrom": [
+    "app/**/*.js"
+  ],
+  "coverageThreshold": {
+    "global": {
+      "branches": 80,
+      "functions": 90,
+      "lines": 80,
+      "statements": 80
+    }
+  },
+  "modulePaths": [
+    "<rootDir>/app/",
+    "<rootDir>/server/",
+    "<rootDir>/node_modules/"
+  ]
+}

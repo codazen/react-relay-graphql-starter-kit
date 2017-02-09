@@ -36,7 +36,7 @@ class TodoApp extends React.Component {
 
   render() {
     return (
-      <div className='todo-app-component'>
+      <div className="todo-app-component">
         <h1>TODO APP</h1>
         <TodoForm addTodo={this.handleAddTodo} />
         <TodoList todos={this.props.user.todos} user={this.props.user} />
@@ -44,6 +44,8 @@ class TodoApp extends React.Component {
     );
   }
 }
+
+exports.TodoApp = TodoApp;
 
 export default Relay.createContainer(TodoApp, {
   fragments: {

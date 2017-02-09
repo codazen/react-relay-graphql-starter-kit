@@ -1,4 +1,4 @@
-/* flow */
+/* @flow */
 
 import React from 'react';
 
@@ -53,16 +53,16 @@ export default class TodoForm extends React.Component {
 
   render() {
     return (
-      <div className='todo-form-component'>
+      <div className="todo-form-component">
         <form onSubmit={this.handleSubmit}>
           <input
-            type='text'
+            type="text"
             value={this.state.content}
-            name='content'
-            placeholder='Add a task'
+            name="content"
+            placeholder="Add a task"
             onChange={this.handleChange}
           />
-          <button action='submit'>
+          <button action="submit">
             +
           </button>
         </form>

@@ -1,0 +1,47 @@
+exports[`ListItem component Tests with all defined props Renders correctly 1`] = `
+<div
+  className="list-item-component">
+  <div>
+    <span
+      onClick={[Function]}>
+      testContent
+    </span>
+    <button
+      onClick={[Function]}>
+      x
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ListItem component Tests with undefined removeItem prop Renders correctly 1`] = `
+<div
+  className="list-item-component">
+  <div>
+    <span
+      onClick={[Function]}>
+      testContent
+    </span>
+    <button
+      onClick={[Function]}>
+      x
+    </button>
+  </div>
+</div>
+`;
+
+exports[`ListItem component Tests with undefined updateItem prop Renders correctly 1`] = `
+<div
+  className="list-item-component">
+  <div>
+    <span
+      onClick={null}>
+      testContent
+    </span>
+    <button
+      onClick={[Function]}>
+      x
+    </button>
+  </div>
+</div>
+`;

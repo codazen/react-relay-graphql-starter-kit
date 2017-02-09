@@ -2,7 +2,7 @@
 
 import React from 'react';
 import Relay from 'react-relay';
-import ListItem from '../../../components/ListItem';
+import ListItem from 'components/ListItem';
 import RemoveTodoMutation from '../mutations/RemoveTodoMutation';
 import UpdateTodoMutation from '../mutations/UpdateTodoMutation';
 
@@ -65,6 +65,8 @@ class TodoItem extends React.Component {
     );
   }
 }
+
+exports.TodoItem = TodoItem;
 
 export default Relay.createContainer(TodoItem, {
   fragments: {
