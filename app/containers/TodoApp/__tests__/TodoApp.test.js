@@ -8,9 +8,6 @@ import schemaString from 'data/schema.graphql';
 import { TodoApp } from '../TodoApp';
 import AddTodoMutation from '../mutations/AddTodoMutation';
 
-// setup React as global variable
-global.React = React;
-
 // use consistent seed for snapshot matching
 casual.seed(123);
 

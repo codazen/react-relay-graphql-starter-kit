@@ -3,9 +3,6 @@ import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import ListItem from '../ListItem';
 
-// setup React as global variable
-global.React = React;
-
 describe('ListItem component', () => {
   let listItem;
   let event;

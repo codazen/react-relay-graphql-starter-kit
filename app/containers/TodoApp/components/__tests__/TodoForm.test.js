@@ -3,9 +3,6 @@ import { shallow } from 'enzyme';
 import { shallowToJson } from 'enzyme-to-json';
 import TodoForm from '../TodoForm';
 
-// setup React as a global variable
-global.React = React;
-
 describe('TodoForm component', () => {
   let todoForm;
   let event;

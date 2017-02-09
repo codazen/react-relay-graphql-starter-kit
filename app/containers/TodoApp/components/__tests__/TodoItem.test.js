@@ -9,9 +9,6 @@ import { TodoItem } from '../TodoItem';
 import RemoveTodoMutation from '../../mutations/RemoveTodoMutation';
 import UpdateTodoMutation from '../../mutations/UpdateTodoMutation';
 
-// setup React as global variable
-global.React = React;
-
 // use consistent seed for snapshot matching
 casual.seed(123);
 

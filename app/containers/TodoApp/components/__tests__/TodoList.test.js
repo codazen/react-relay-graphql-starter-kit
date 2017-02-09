@@ -7,9 +7,6 @@ import casual from 'casual';
 import schemaString from 'data/schema.graphql';
 import { TodoList } from '../TodoList';
 
-// setup React as global variable
-global.React = React;
-
 // use consistent seed for snapshot matching
 casual.seed(123);
 
