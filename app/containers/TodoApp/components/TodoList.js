@@ -32,7 +32,7 @@ class TodoList extends React.Component {
       user,
     } = this.props;
     return (
-      <div className='todo-list-component'>
+      <div className="todo-list-component">
         {todos.edges.map(edge =>
           <TodoItem
             key={edge.node.id}
