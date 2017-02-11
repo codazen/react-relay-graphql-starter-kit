@@ -8,22 +8,22 @@ Core technologies
   * [React](https://facebook.github.io/react/ "React")
   * [Relay](https://facebook.github.io/relay/ "Relay")
   * Routing
-    * [react-router](https://github.com/ReactTraining/react-router)
-    * [react-router-relay](https://github.com/relay-tools/react-router-relay)
+    * [react-router](https://github.com/ReactTraining/react-router "react-router")
+    * [react-router-relay](https://github.com/relay-tools/react-router-relay "react-router-relay")
 * Backend
   * [Node.js](https://nodejs.org/en/ "Node.js") / [Express](http://expressjs.com/ "Express")
   * [GraphQL](http://graphql.org/ "GraphQL")
 * Testing
-  * [Jest](https://facebook.github.io/jest/)
-  * [Enzyme](http://airbnb.io/enzyme/index.html)
-  * [graphql-tools](http://dev.apollodata.com/tools/graphql-tools/)
-  * [casual](https://github.com/boo1ean/casual)
+  * [Jest](https://facebook.github.io/jest/ "Jest")
+  * [Enzyme](http://airbnb.io/enzyme/index.html "Enzyme")
+  * [graphql-tools](http://dev.apollodata.com/tools/graphql-tools/ "graphql-tools")
+  * [casual](https://github.com/boo1ean/casual "casual")
 * Tools
   * [Webpack](https://webpack.github.io/ "Webpack")
   * [Babel](https://babeljs.io/ "Babel")
   * [Flow](https://flowtype.org/ "Flow")
   * [ESLint](http://eslint.org/ "ESLint")
-  * [Yarn](https://yarnpkg.com/en/)
+  * [Yarn](https://yarnpkg.com/en/ "Yarn")
 
 Extensions
 ------
