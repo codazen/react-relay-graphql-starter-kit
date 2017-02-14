@@ -3,18 +3,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import Relay from 'react-relay';
-import { browserHistory, Router, applyRouterMiddleware } from 'react-router';
-import useRelay from 'react-router-relay';
+import { browserHistory, match, Router } from 'react-router';
+import IsomorphicRelay from 'isomorphic-relay';
+import IsomorphicRouter from 'isomorphic-relay-router';
 import routes from './routes';
 
 import './styles/styles.css';
 
-ReactDOM.render(
-  <Router
-    environment={Relay.Store}
-    history={browserHistory}
-    routes={routes}
-    render={applyRouterMiddleware(useRelay)}
-  />,
-  document.getElementById('root'),
-);
+const environment = new Relay.Environment();
+// match network layer with server's isomorphic network layer
+environment.injectNetworkLayer(new Relay.DefaultNetworkLayer('/graphql'));
+
+const preloadedData: any = document.getElementById('preloadedData');
+const data = JSON.parse(preloadedData.textContent);
+IsomorphicRelay.injectPreparedData(environment, data);
+
+match({ routes, history: browserHistory }, (error, redirectLocation, renderProps) => {
+  IsomorphicRouter.prepareInitialRender(environment, renderProps).then((props) => {
+    ReactDOM.render(<Router {...props} />, document.getElementById('root'));
+  });
+});

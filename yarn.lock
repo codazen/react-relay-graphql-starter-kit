@@ -918,7 +918,7 @@ babel-relay-plugin@^0.11.0:
   dependencies:
     graphql "0.9.1"
 
-babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.6.1:
+babel-runtime@^6.11.6, babel-runtime@^6.18.0, babel-runtime@^6.22.0, babel-runtime@^6.3.19, babel-runtime@^6.6.1:
   version "6.22.0"
   resolved "https://registry.yarnpkg.com/babel-runtime/-/babel-runtime-6.22.0.tgz#1cf8b4ac67c77a4ddb0db2ae1f74de52ac4ca611"
   dependencies:
@@ -1751,6 +1751,10 @@ ecc-jsbn@~0.1.1:
 ee-first@1.1.1:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/ee-first/-/ee-first-1.1.1.tgz#590c61156b0ae2f4f0255732a158b266bc56b21d"
+
+ejs@^2.5.5:
+  version "2.5.5"
+  resolved "https://registry.yarnpkg.com/ejs/-/ejs-2.5.5.tgz#6ef4e954ea7dcf54f66aad2fe7aa421932d9ed77"
 
 electron-to-chromium@^1.2.1:
   version "1.2.1"
@@ -2863,6 +2867,19 @@ isomorphic-fetch@^2.1.1:
   dependencies:
     node-fetch "^1.0.1"
     whatwg-fetch ">=0.10.0"
+
+isomorphic-relay-router@^0.8.6:
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/isomorphic-relay-router/-/isomorphic-relay-router-0.8.6.tgz#b31cccd02715bda7c38cb68fb84b5fa9280d35fd"
+  dependencies:
+    babel-runtime "^6.3.19"
+    react-router-relay "0.13.5"
+
+isomorphic-relay@^0.7.4:
+  version "0.7.4"
+  resolved "https://registry.yarnpkg.com/isomorphic-relay/-/isomorphic-relay-0.7.4.tgz#40702fa50d172a69e4f60228aa6d1220c264ed2c"
+  dependencies:
+    babel-runtime "^6.6.1"
 
 isstream@~0.1.2:
   version "0.1.2"
@@ -4093,7 +4110,7 @@ react-relay@^0.10.0:
     fbjs "^0.8.1"
     react-static-container "^1.0.1"
 
-react-router-relay@^0.13.5:
+react-router-relay@0.13.5, react-router-relay@^0.13.5:
   version "0.13.5"
   resolved "https://registry.yarnpkg.com/react-router-relay/-/react-router-relay-0.13.5.tgz#1222ff065029b6497f5b452dab12cdaf618e6945"
   dependencies:

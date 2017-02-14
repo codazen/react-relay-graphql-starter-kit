@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>React-Relay-GraphQL</title>
+    <link rel='stylesheet' href='styles.css'>
+</head>
+<body>
+    <div id="root">
+      <!-- react needs extra div to support isomorphic behavior: http://stackoverflow.com/a/33521172 -->
+      <div><%- reactOutput %></div>
+    </div>
+    <script id="preloadedData" type="application/json">
+        <%- JSON.stringify(preloadedData).replace(/\//g, '\\/') %>
+    </script>
+    <script src="bundle.js"></script>
+</body>
+</html>
