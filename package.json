@@ -7,9 +7,7 @@
     "eslint": "eslint . --ext .js",
     "stylelint": "stylelint app/**/*.css",
     "flow": "flow",
-    "start": "npm run start:windows",
-    "start:linux": "nodemon --exec babel-node server & webpack --watch",
-    "start:windows": "start nodemon --exec babel-node server & start webpack --watch",
+    "start": "cross-env NODE_ENV=development nodemon --exec babel-node -w server server",
     "test": "echo \"Error: no test specified\" && exit 1",
     "update-schema": "babel-node ./server/scripts/updateSchema.js",
     "lint": "jshint .",
@@ -32,6 +30,7 @@
   "homepage": "https://github.com/codazen/react-relay-graphql-starter-kit#readme",
   "dependencies": {
     "babel-relay-plugin": "^0.11.0",
+    "cross-env": "^3.1.4",
     "express": "^4.14.0",
     "express-graphql": "^0.6.2",
     "graphql": "^0.9.1",
@@ -67,9 +66,13 @@
     "nodemon": "^1.11.0",
     "path": "^0.12.7",
     "precommit-hook": "^3.0.0",
+    "react-addons-test-utils": "^15.4.2",
+    "style-loader": "^0.13.1",
     "stylelint": "^7.8.0",
     "stylelint-config-standard": "^16.0.0",
     "stylelint-order": "^0.2.2",
-    "webpack": "^2.2.1"
+    "webpack": "^2.2.1",
+    "webpack-dev-middleware": "^1.10.0",
+    "webpack-hot-middleware": "^2.16.1"
   }
 }

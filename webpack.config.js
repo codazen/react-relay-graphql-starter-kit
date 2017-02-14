@@ -5,7 +5,9 @@ const ExtractTextPlugin = require('extract-text-webpack-plugin');
 const webpack = require('webpack');
 
 const config = {
-  entry: './app/app.js',
+  entry: {
+    app: [path.resolve(__dirname, 'app', 'app.js')],
+  },
   output: {
     path: path.resolve(__dirname, 'public'),
     filename: 'bundle.js',
@@ -19,21 +21,29 @@ const config = {
       },
       {
         test: /\.css$/,
-        use: ExtractTextPlugin.extract({
-          loader: 'css-loader',
-          options: {
-            minimize: true || { safe: true },
-          },
-        }),
+        use: process.env.NODE_ENV === 'production' ?
+          ExtractTextPlugin.extract({
+            loader: 'css-loader',
+            options: {
+              minimize: true || { safe: true },
+            },
+          })
+          : ['style-loader', 'css-loader?sourceMap'],
       },
     ],
   },
-  plugins: [
-    new ExtractTextPlugin('styles.css'),
-  ],
+  plugins: [],
+  resolve: {
+    modules: [
+      'app',
+      'server',
+      'node_modules',
+    ],
+  },
 };
 
 if (process.env.NODE_ENV === 'production') {
+  config.plugins.push(new ExtractTextPlugin('styles.css'));
   config.plugins.push(new webpack.optimize.UglifyJsPlugin());
 }
 

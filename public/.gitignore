@@ -1,0 +1,6 @@
+# webpack will output files to be served here, so
+# ignore everything in this directory
+*
+
+# except this file
+!.gitignore

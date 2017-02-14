@@ -1,5 +1,3 @@
-/* @flow */
-
 import express from 'express';
 import graphQLHTTP from 'express-graphql';
 import path from 'path';
@@ -14,6 +12,26 @@ const PORT = process.env.PORT || 8080;
 const app = express();
 
 app.use('/graphql', graphQLHTTP({ schema, pretty: true, graphiql: true }));
+
+// use webpack middleware for development
+if (process.env.NODE_ENV === 'development') {
+  /* eslint-disable global-require, import/no-extraneous-dependencies */
+  const webpack = require('webpack');
+  const webpackDevMiddleware = require('webpack-dev-middleware');
+  const webpackHotMiddleware = require('webpack-hot-middleware');
+  const webpackConfig = require('../webpack.config');
+  /* eslint-enable global-requir, import/no-extraneous-dependenciese */
+
+  const config = webpackConfig;
+  config.devtool = 'source-map';
+  config.entry.app.unshift('webpack-hot-middleware/client?reload=true');
+  config.plugins.push(new webpack.HotModuleReplacementPlugin());
+  const compiler = webpack(config);
+
+  app.use(webpackDevMiddleware(compiler, { noInfo: true }));
+  app.use(webpackHotMiddleware(compiler));
+}
+
 app.use(express.static('public'));
 
 // serve isomorphic app
