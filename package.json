@@ -33,11 +33,13 @@
   "homepage": "https://github.com/codazen/react-relay-graphql-starter-kit#readme",
   "dependencies": {
     "babel-relay-plugin": "^0.11.0",
+    "bcryptjs": "^2.4.3",
     "express": "^4.14.0",
     "express-graphql": "^0.6.2",
     "graphql": "^0.9.1",
     "graphql-relay": "^0.5.1",
     "graphql-tools": "^0.10.0",
+    "mongoose": "^4.8.2",
     "react": "^15.4.2",
     "react-dom": "^15.4.2",
     "react-relay": "^0.10.0",
