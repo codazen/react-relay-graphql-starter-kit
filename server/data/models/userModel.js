@@ -46,3 +46,18 @@ UserSchema.methods.validatePassword = function (password, cb) {
 
 const User = mongoose.model('User', UserSchema);
 exports.UserModel = User;
+
+type UserParams = {
+  firstName: string,
+  lastName: string,
+  email: string,
+};
+
+exports.addUser = (user: UserParams) => {
+  const newUser = new User(user);
+  return new Promise((resolve, reject) => {
+    newUser.save((err, res) => {
+      err ? reject(err) : resolve(res); // eslint-disable-line no-unused-expressions
+    });
+  });
+};
