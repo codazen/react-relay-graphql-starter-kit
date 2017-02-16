@@ -16,6 +16,9 @@ const UserSchema = new mongoose.Scehma({
       unique: true,
     },
   },
+  password: {
+    required: true,
+  },
   todos: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Todo',
@@ -47,13 +50,14 @@ UserSchema.methods.validatePassword = function (password, cb) {
 const User = mongoose.model('User', UserSchema);
 exports.UserModel = User;
 
-type UserParams = {
+type AddUserParams = {
   firstName: string,
   lastName: string,
   email: string,
+  password: string,
 };
 
-exports.addUser = (user: UserParams) => {
+exports.addUser = (user: AddUserParams) => {
   const newUser = new User(user);
   return new Promise((resolve, reject) => {
     newUser.save((err, res) => {
