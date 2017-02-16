@@ -24,6 +24,7 @@ const UserSchema = new mongoose.Schema({
   todos: [{
     type: mongoose.Schema.Types.ObjectId,
     ref: 'Todo',
+    default: [],
   }],
 });
 
@@ -111,7 +112,7 @@ exports.removeUser = (_id: string) =>
 
 exports.addTodoToUser = (userID: string, todoID: string) =>
   new Promise((resolve, reject) => {
-    User.findOne({ _id: userID }, (err, user) => {
+    User.findById({ _id: userID }, (err, user) => {
       user.todos.push(todoID);
       user.save((error, result) => {
         error ? reject(error) : resolve(result);

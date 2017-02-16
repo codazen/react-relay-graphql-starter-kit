@@ -1,11 +1,17 @@
 /* @flow */
 
 import { UserType } from '../types/userType';
-import { getViewer } from '../database';
+import { getUser } from '../models/userModel';
 
 const user = {
   type: UserType,
-  resolve: async () => getViewer(),
+  // eslint-disable-next-line no-unused-vars
+  resolve: async (source: any, args: any, context: any, info: any) => {
+    const rootUser = await getUser(context.userID);
+    return {
+      rootUser,
+    };
+  },
 };
 
 export default {
