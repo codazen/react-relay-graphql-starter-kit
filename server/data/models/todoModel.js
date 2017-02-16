@@ -1,4 +1,5 @@
 /* @flow */
+/* eslint consistent-return: 'off', no-unused-expressions: 'off' */
 
 import mongoose from 'mongoose';
 
@@ -13,7 +14,7 @@ exports.addTodo = (content: string) => {
   const newTodo = new Todo({ content });
   return new Promise((resolve, reject) => {
     newTodo.save((err, todo) => {
-      err ? reject(err) : resolve(todo); // eslint-disable-line no-unused-expressions
+      err ? reject(err) : resolve(todo);
     });
   });
 };
@@ -25,7 +26,7 @@ exports.updateTodo = (_id: string, content: string) =>
       { content },
       { new: true },
       (err, todo) => {
-        err ? reject(err) : resolve(todo); // eslint-disable-line no-unused-expressions
+        err ? reject(err) : resolve(todo);
       },
     );
   });
@@ -35,7 +36,7 @@ exports.removeTodo = (_id: string) =>
     Todo.findByIdAndRemove(
       _id,
       (err, todo) => {
-        err ? reject(err) : resolve(todo); // eslint-disable-line no-unused-expressions
+        err ? reject(err) : resolve(todo);
       },
     );
   });

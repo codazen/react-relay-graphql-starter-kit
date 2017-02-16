@@ -1,5 +1,5 @@
 /* @flow */
-/* eslint consistent-return: 'off' */
+/* eslint consistent-return: 'off', no-unused-expressions: 'off' */
 
 import mongoose from 'mongoose';
 import bcrypt from 'bcryptjs';
@@ -63,7 +63,7 @@ exports.addUser = (user: AddUserParams) => {
   const newUser = new User(user);
   return new Promise((resolve, reject) => {
     newUser.save((err, res) => {
-      err ? reject(err) : resolve(res); // eslint-disable-line no-unused-expressions
+      err ? reject(err) : resolve(res);
     });
   });
 };
@@ -84,7 +84,7 @@ exports.updateUserInfo = (_id: string, userInfo: UserInfo) =>
       { $set: { firstName, lastName } },
       { new: true },
       (err, result) => {
-        err ? reject(err) : resolve(result); // eslint-disable-line no-unused-expressions
+        err ? reject(err) : resolve(result);
       },
     );
   });
@@ -94,7 +94,7 @@ exports.updatePassword = (_id: string, userPassword: string) =>
     User.findById(_id, (err, user) => {
       user.password = userPassword; // eslint-disable-line no-param-reassign
       user.save((error, result) => {
-        err ? reject(error) : resolve(result); // eslint-disable-line no-unused-expressions
+        err ? reject(error) : resolve(result);
       });
     });
   });
@@ -104,7 +104,7 @@ exports.removeUser = (_id: string) =>
     User.findByIdAndRemove(
       _id,
       (err, user) => {
-        err ? reject(err) : resolve(user); // eslint-disable-line no-unused-expressions
+        err ? reject(err) : resolve(user);
       },
     );
   });
@@ -114,7 +114,7 @@ exports.addTodoToUser = (userID: string, todoID: string) =>
     User.findOne({ _id: userID }, (err, user) => {
       user.todos.push(todoID);
       user.save((error, result) => {
-        error ? reject(error) : resolve(result); // eslint-disable-line no-unused-expressions
+        error ? reject(error) : resolve(result);
       });
     });
   });
