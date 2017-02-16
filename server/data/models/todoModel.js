@@ -40,3 +40,13 @@ exports.removeTodo = (_id: string) =>
       },
     );
   });
+
+exports.getTodo = (_id: string) =>
+  new Promise((resolve, reject) => {
+    Todo.findOne(
+      _id,
+      (err, todo) => {
+        err ? reject(err) : resolve(todo);
+      },
+    );
+  });

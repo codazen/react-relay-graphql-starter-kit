@@ -5,10 +5,9 @@ import { connectionDefinitions, globalIdField } from 'graphql-relay';
 import { nodeInterface } from '../nodes';
 import { registerType } from '../typeRegistry';
 import {
-  todosById,
   getTodo,
-} from '../database';
-
+  TodoModel,
+} from '../models/todoModel';
 
 const TodoType = new GraphQLObjectType({
   name: 'Todo',
@@ -28,6 +27,6 @@ const {
   edgeType: TodoEdge,
 } = connectionDefinitions({ name: 'Todo', nodeType: TodoType });
 
-registerType(todosById, TodoType, getTodo);
+registerType(TodoModel, TodoType, getTodo);
 
 module.exports = { TodoType, TodoConnection, TodoEdge };

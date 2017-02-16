@@ -16,12 +16,13 @@ import { UserType } from '../types/userType';
 import { TodoEdge, TodoType } from '../types/todoType';
 import {
   addTodo,
-  getTodo,
-  getNumTodos,
-  getViewer,
   removeTodo,
   updateTodo,
-} from '../database';
+} from '../models/todoModel';
+import {
+  addTodoToUser,
+  removeTodoFromUser,
+} from '../models/userModel';
 
 const addTodoMutation = mutationWithClientMutationId({
   name: 'AddTodo',
@@ -29,13 +30,15 @@ const addTodoMutation = mutationWithClientMutationId({
     content: {
       type: new GraphQLNonNull(GraphQLString),
     },
+    userID: {
+      type: new GraphQLNonNull(GraphQLID),
+    },
   },
   outputFields: {
     newTodoEdge: {
       type: TodoEdge,
-      resolve: async ({ localTodoId }) => {
-        const todo = await getTodo(localTodoId);
-        const numTodos = await getNumTodos();
+      resolve: async ({ todo, user }) => {
+        const numTodos = user.todos.length;
         // Note on offsetToCursor
         // WARNING: 'cursorForObjectInConnection' returns null and causes
         // mutation to fail here b/c it uses indexOf. See:
@@ -48,13 +51,16 @@ const addTodoMutation = mutationWithClientMutationId({
     },
     user: {
       type: UserType,
-      resolve: () => getViewer(),
+      resolve: ({ user }) => user,
     },
   },
-  mutateAndGetPayload: async ({ content }) => {
-    const localTodoId = await addTodo(content);
+  mutateAndGetPayload: async ({ userID, content }) => {
+    const todo = await addTodo(content);
+    const localUserID = fromGlobalId(userID).id;
+    const user = await addTodoToUser(localUserID, todo._id); // eslint-disable-line
     return {
-      localTodoId,
+      todo,
+      user,
     };
   },
 });
@@ -65,6 +71,9 @@ const removeTodoMutation = mutationWithClientMutationId({
     id: {
       type: new GraphQLNonNull(GraphQLID),
     },
+    userID: {
+      type: new GraphQLNonNull(GraphQLID),
+    },
   },
   outputFields: {
     deletedTodoId: {
@@ -73,14 +82,17 @@ const removeTodoMutation = mutationWithClientMutationId({
     },
     user: {
       type: UserType,
-      resolve: () => getViewer(),
+      resolve: ({ user }) => user,
     },
   },
-  mutateAndGetPayload: async ({ id }) => {
-    const localTodoId = fromGlobalId(id).id;
-    removeTodo(localTodoId);
+  mutateAndGetPayload: async ({ id, userID }) => {
+    const localTodoID = fromGlobalId(id).id;
+    const localUserID = fromGlobalId(userID).id;
+    await removeTodo(localTodoID);
+    const user = await removeTodoFromUser(localUserID, localTodoID);
     return {
       id,
+      user,
     };
   },
 });
@@ -98,14 +110,14 @@ const updateTodoMutation = mutationWithClientMutationId({
   outputFields: {
     todo: {
       type: TodoType,
-      resolve: async ({ localTodoId }) => getTodo(localTodoId),
+      resolve: ({ todo }) => todo,
     },
   },
-  mutateAndGetPayload: ({ id, content }) => {
+  mutateAndGetPayload: async ({ id, content }) => {
     const localTodoId = fromGlobalId(id).id;
-    updateTodo(localTodoId, content);
+    const todo = await updateTodo(localTodoId, content);
     return {
-      localTodoId,
+      todo,
     };
   },
 });

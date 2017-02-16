@@ -6,7 +6,7 @@ import bcrypt from 'bcryptjs';
 
 const SALT_ITERATIONS = 10;
 
-const UserSchema = new mongoose.Scehma({
+const UserSchema = new mongoose.Schema({
   firstName: String,
   lastName: String,
   email: {
@@ -117,4 +117,38 @@ exports.addTodoToUser = (userID: string, todoID: string) =>
         error ? reject(error) : resolve(result);
       });
     });
+  });
+
+exports.removeTodoFromUser = (userID: string, todoID: string) =>
+  new Promise((resolve, reject) => {
+    User.findOne({ _id: userID }, (err, user) => {
+      const index = user.todos.indexOf(todoID);
+      if (index > -1) {
+        user.todos.splice(index, 1);
+      }
+      user.save((error, result) => {
+        error ? reject(error) : resolve(result);
+      });
+    });
+  });
+
+exports.getUser = (_id: string) =>
+  new Promise((resolve, reject) => {
+    User.findOne(
+      _id,
+      (err, user) => {
+        err ? reject(err) : resolve(user);
+      },
+    );
+  });
+
+exports.getTodosFromUser = (_id: string) =>
+  new Promise((resolve, reject) => {
+    User.findById(_id, 'todos')
+        .populate({
+          path: 'todos',
+        })
+        .exec((err, user) => {
+          err ? reject(err) : resolve(user.todos);
+        });
   });
