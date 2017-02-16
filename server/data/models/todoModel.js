@@ -21,7 +21,7 @@ exports.addTodo = (content: string) => {
 exports.updateTodo = (_id: string, content: string) =>
   new Promise((resolve, reject) => {
     Todo.findByIdAndUpdate(
-      { _id: mongoose.Types.ObjectId(_id) },
+      _id,
       { content },
       { new: true },
       (err, todo) => {
@@ -30,10 +30,10 @@ exports.updateTodo = (_id: string, content: string) =>
     );
   });
 
-exports.deleteTodo = (_id: string) =>
+exports.removeTodo = (_id: string) =>
   new Promise((resolve, reject) => {
     Todo.findByIdAndRemove(
-      { _id: mongoose.Types.ObjectId(_id) },
+      _id,
       (err, todo) => {
         err ? reject(err) : resolve(todo); // eslint-disable-line no-unused-expressions
       },

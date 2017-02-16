@@ -17,6 +17,8 @@ const UserSchema = new mongoose.Scehma({
     },
   },
   password: {
+    type: String,
+    select: false,
     required: true,
   },
   todos: [{
@@ -65,3 +67,54 @@ exports.addUser = (user: AddUserParams) => {
     });
   });
 };
+
+type UserInfo = {
+  firstName: string,
+  lastName: string,
+}
+
+exports.updateUserInfo = (_id: string, userInfo: UserInfo) =>
+  new Promise((resolve, reject) => {
+    const {
+      firstName,
+      lastName,
+    } = userInfo;
+    User.findByIdAndUpdate(
+      _id,
+      { $set: { firstName, lastName } },
+      { new: true },
+      (err, result) => {
+        err ? reject(err) : resolve(result); // eslint-disable-line no-unused-expressions
+      },
+    );
+  });
+
+exports.updatePassword = (_id: string, userPassword: string) =>
+  new Promise((resolve, reject) => {
+    User.findById(_id, (err, user) => {
+      user.password = userPassword; // eslint-disable-line no-param-reassign
+      user.save((error, result) => {
+        err ? reject(error) : resolve(result); // eslint-disable-line no-unused-expressions
+      });
+    });
+  });
+
+exports.removeUser = (_id: string) =>
+  new Promise((resolve, reject) => {
+    User.findByIdAndRemove(
+      _id,
+      (err, user) => {
+        err ? reject(err) : resolve(user); // eslint-disable-line no-unused-expressions
+      },
+    );
+  });
+
+exports.addTodoToUser = (userID: string, todoID: string) =>
+  new Promise((resolve, reject) => {
+    User.findOne({ _id: userID }, (err, user) => {
+      user.todos.push(todoID);
+      user.save((error, result) => {
+        error ? reject(error) : resolve(result); // eslint-disable-line no-unused-expressions
+      });
+    });
+  });
