@@ -9,7 +9,7 @@ const user = {
   resolve: async (source: any, args: any, context: any, info: any) => {
     const rootUser = await getUser(context.userID);
     return {
-      rootUser,
+      ...rootUser,
     };
   },
 };
