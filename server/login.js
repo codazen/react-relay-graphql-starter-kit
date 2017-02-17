@@ -12,20 +12,21 @@ router.post('/authenticate', (req, res) => {
       res.json({ success: false, message: err });
     } else if (!user) {
       res.json({ success: false, message: 'Email not found' });
+    } else {
+      user.validatePassword(req.body.password, (error, valid) => {
+        if (error) {
+          res.json({ success: false, message: error });
+        } else if (valid) {
+          const token = jwt.sign({ userID: user._id }, secret, { expiresIn: '1d' }); // eslint-disable-line
+          res.setHeader('Set-Cookie', cookie.serialize('access_token', String(token), { httpOnly: true }));
+          res.send({
+            result: 'YOU GOT A TOKEN',
+          });
+        } else {
+          res.json({ success: false, message: 'Password incorrect' });
+        }
+      });
     }
-    user.validatePassword(req.body.password, (error, valid) => {
-      if (error) {
-        res.json({ success: false, message: error });
-      } else if (valid) {
-        const token = jwt.sign({ userID: user._id }, secret, { expiresIn: '1d' }); // eslint-disable-line
-        res.setHeader('Set-Cookie', cookie.serialize('access_token', String(token), { httpOnly: true }));
-        res.send({
-          result: 'YOU GOT A TOKEN',
-        });
-      } else {
-        res.json({ success: false, message: 'Password incorrect' });
-      }
-    });
   });
 });
 

@@ -30,9 +30,6 @@ const addTodoMutation = mutationWithClientMutationId({
     content: {
       type: new GraphQLNonNull(GraphQLString),
     },
-    userID: {
-      type: new GraphQLNonNull(GraphQLID),
-    },
   },
   outputFields: {
     newTodoEdge: {
@@ -54,10 +51,9 @@ const addTodoMutation = mutationWithClientMutationId({
       resolve: ({ user }) => user,
     },
   },
-  mutateAndGetPayload: async ({ userID, content }) => {
-    const todo = await addTodo(content);
-    const localUserID = fromGlobalId(userID).id;
-    const user = await addTodoToUser(localUserID, todo._id); // eslint-disable-line
+  mutateAndGetPayload: async (source, context) => {
+    const todo = await addTodo(source.content);
+    const user = await addTodoToUser(context.user.userID, todo._id); // eslint-disable-line
     return {
       todo,
       user,
@@ -71,9 +67,6 @@ const removeTodoMutation = mutationWithClientMutationId({
     id: {
       type: new GraphQLNonNull(GraphQLID),
     },
-    userID: {
-      type: new GraphQLNonNull(GraphQLID),
-    },
   },
   outputFields: {
     deletedTodoId: {
@@ -85,11 +78,10 @@ const removeTodoMutation = mutationWithClientMutationId({
       resolve: ({ user }) => user,
     },
   },
-  mutateAndGetPayload: async ({ id, userID }) => {
+  mutateAndGetPayload: async ({ id }, context) => {
     const localTodoID = fromGlobalId(id).id;
-    const localUserID = fromGlobalId(userID).id;
     await removeTodo(localTodoID);
-    const user = await removeTodoFromUser(localUserID, localTodoID);
+    const user = await removeTodoFromUser(context.user.userID, localTodoID);
     return {
       id,
       user,

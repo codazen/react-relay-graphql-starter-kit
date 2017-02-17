@@ -33,6 +33,7 @@
   "homepage": "https://github.com/codazen/react-relay-graphql-starter-kit#readme",
   "dependencies": {
     "async": "^2.1.4",
+    "axios": "^0.15.3",
     "babel-relay-plugin": "^0.11.0",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.16.1",
