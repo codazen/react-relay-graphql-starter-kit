@@ -28,9 +28,10 @@ const UserType = new GraphQLObjectType({
       type: TodoConnection,
       description: 'The todos for a user',
       args: connectionArgs,
-      resolve: async (source, args, context, info) => // eslint-disable-line
-        connectionFromArray(
-          await getTodosFromUser(source.id), args),
+      resolve: async (source, args, context, info) => { // eslint-disable-line
+        const todos = await getTodosFromUser(context.user.userID);
+        return connectionFromArray(todos, args);
+      },
     },
   },
   interfaces: () => [nodeInterface],

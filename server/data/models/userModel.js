@@ -18,7 +18,6 @@ const UserSchema = new mongoose.Schema({
   },
   password: {
     type: String,
-    select: false,
     required: true,
   },
   todos: [{
@@ -136,7 +135,7 @@ exports.removeTodoFromUser = (userID: string, todoID: string) =>
 exports.getUser = (_id: string) =>
   new Promise((resolve, reject) => {
     User.findOne(
-      _id,
+      { _id },
       (err, user) => {
         err ? reject(err) : resolve(user);
       },

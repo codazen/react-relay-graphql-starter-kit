@@ -7,7 +7,7 @@ const user = {
   type: UserType,
   // eslint-disable-next-line no-unused-vars
   resolve: async (source: any, args: any, context: any, info: any) => {
-    const rootUser = await getUser(context.userID);
+    const rootUser = await getUser(context.user.userID);
     return {
       ...rootUser,
     };

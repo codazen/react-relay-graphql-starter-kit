@@ -3,7 +3,13 @@
 import express from 'express';
 import graphQLHTTP from 'express-graphql';
 import mongoose from 'mongoose';
+import expressJWT from 'express-jwt';
+import cookie from 'cookie';
+import bodyParser from 'body-parser';
 import { schema } from './data/schema';
+import { secret } from './secret';
+import { router } from './login';
+
 
 const PORT = process.env.PORT || 8080;
 const MONGODB = process.env.MONGO || 'mongodb://localhost:27017/react-relay-graphql';
@@ -13,7 +19,19 @@ mongoose.connect(MONGODB, () => {
 
 const app = express();
 
-app.use('/graphql', graphQLHTTP({ schema, pretty: true, graphiql: true }));
+app.use(bodyParser());
+
+app.use('/', router);
+
+const authenticator = expressJWT({
+  secret,
+  getToken: (req) => {
+    const cookies = cookie.parse(req.headers.cookie || '');
+    return cookies.access_token;
+  },
+}).unless({ path: ['/graphiql'] });
+
+app.use('/graphql', authenticator, graphQLHTTP({ schema, pretty: true, graphiql: true }));
 app.use(express.static('public'));
 
 app.listen(PORT, () => {
