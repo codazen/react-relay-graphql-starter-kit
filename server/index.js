@@ -3,6 +3,7 @@
 import express from 'express';
 import graphQLHTTP from 'express-graphql';
 import mongoose from 'mongoose';
+import jwt from 'jsonwebtoken';
 import expressJWT from 'express-jwt';
 import cookie from 'cookie';
 import bodyParser from 'body-parser';
@@ -26,8 +27,14 @@ app.use('/', router);
 const authenticator = expressJWT({
   secret,
   getToken: (req) => {
-    const cookies = cookie.parse(req.headers.cookie || '');
-    return cookies.access_token;
+    if (req.headers.origin.split('//')[1] === req.headers.referer.split('//')[1].split('/')[0]) {
+      const cookies = cookie.parse(req.headers.cookie || '');
+      const xsrfToken = jwt.decode(cookies.access_token, { complete: true }).payload.xsrfToken;
+      if (xsrfToken === req.headers['x-xsrf-token']) {
+        return cookies.access_token;
+      }
+    }
+    return '';
   },
 }).unless({ path: ['/graphiql'] });
 

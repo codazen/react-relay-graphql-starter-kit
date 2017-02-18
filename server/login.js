@@ -3,6 +3,7 @@
 import express from 'express';
 import jwt from 'jsonwebtoken';
 import cookie from 'cookie';
+import uuidV4 from 'uuid/v4'; // eslint-disable-line
 import { secret } from './secret';
 import { UserModel } from './data/models/userModel';
 
@@ -19,8 +20,12 @@ router.post('/authenticate', (req, res) => {
         if (error) {
           res.json({ success: false, message: error });
         } else if (valid) {
-          const token = jwt.sign({ userID: user._id }, secret, { expiresIn: '1d' }); // eslint-disable-line
-          res.setHeader('Set-Cookie', cookie.serialize('access_token', String(token), { httpOnly: true }));
+          // const xsrfToken = uuidV4();
+          const xsrfToken = '74e022ca-5b2e-480c-9fc4-a24555f1c11a';
+          const token = jwt.sign({ userID: user._id, xsrfToken }, secret, { expiresIn: '1d' }); // eslint-disable-line
+          const httpOnlyCookie = cookie.serialize('access_token', String(token), { httpOnly: true });
+          const xsrfCookie = cookie.serialize('xsrf_token', String(xsrfToken));
+          res.setHeader('Set-Cookie', [httpOnlyCookie, xsrfCookie]);
           res.send({
             result: 'YOU GOT A TOKEN',
           });
