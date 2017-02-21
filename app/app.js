@@ -13,8 +13,6 @@ Axios.post('http://localhost:8080/authenticate',
           { email: 'testuser@test.com', password: 'password' },
           { withCredentials: true });
 
-console.log(document.cookie); // eslint-disable-line
-
 const getCookie = () => {
   const name = 'xsrf_token=';
   const decodedCookie = decodeURIComponent(document.cookie);

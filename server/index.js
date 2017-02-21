@@ -7,6 +7,7 @@ import jwt from 'jsonwebtoken';
 import expressJWT from 'express-jwt';
 import cookie from 'cookie';
 import bodyParser from 'body-parser';
+import path from 'path';
 import { schema } from './data/schema';
 import { secret } from './secret';
 import { router } from './login';
@@ -39,7 +40,18 @@ const authenticator = expressJWT({
 }).unless({ path: ['/graphiql'] });
 
 app.use('/graphql', authenticator, graphQLHTTP({ schema, pretty: true, graphiql: true }));
+app.use((err, req, res, next) => {
+  if (err.name === 'UnauthorizedError') {
+    res.redirect('/login');
+  }
+  next();
+});
+
 app.use(express.static('public'));
+
+app.get('*', (request, response) => {
+  response.sendFile(path.resolve(__dirname, '../public', 'index.html'));
+});
 
 app.listen(PORT, () => {
   console.log(`Listening on port ${PORT}`); // eslint-disable-line no-console
