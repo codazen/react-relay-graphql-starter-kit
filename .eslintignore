@@ -1,2 +1,4 @@
 **/node_modules/*
-public/bundle.js
+lib
+public/*
+!public/index.html
