@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Relay from 'react-relay';
+import { browserHistory } from 'react-router';
 import TodoForm from './components/TodoForm';
 import TodoList from './components/TodoList';
 import AddTodoMutation from './mutations/AddTodoMutation';
@@ -31,6 +32,14 @@ class TodoApp extends React.Component {
   handleAddTodo = (content: string) => {
     this.props.relay.commitUpdate(
       new AddTodoMutation({ content, user: this.props.user }),
+      {
+        onFailure: () => {
+          // Need to add better logic here for determining what
+          // is happening in regards to a mutation error
+          browserHistory.push('/login');
+        },
+        onSuccess: () => {},
+      },
     );
   }
 

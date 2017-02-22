@@ -2,6 +2,7 @@
 
 import React from 'react';
 import Relay from 'react-relay';
+import { browserHistory } from 'react-router';
 import ListItem from 'components/ListItem';
 import RemoveTodoMutation from '../mutations/RemoveTodoMutation';
 import UpdateTodoMutation from '../mutations/UpdateTodoMutation';
@@ -37,6 +38,14 @@ class TodoItem extends React.Component {
   handleRemoveTodo = (id: string) => {
     this.props.relay.commitUpdate(
       new RemoveTodoMutation({ id, user: this.props.user }),
+      {
+        onFailure: () => {
+          // Need to add better logic here for determining what
+          // is happening in regards to a mutation error
+          browserHistory.push('/login');
+        },
+        onSuccess: () => {},
+      },
     );
   }
 
@@ -47,6 +56,14 @@ class TodoItem extends React.Component {
   handleUpdateTodo = (todo: Todo) => {
     this.props.relay.commitUpdate(
       new UpdateTodoMutation({ todo: this.props.todo, content: todo.content }),
+      {
+        onFailure: () => {
+          // Need to add better logic here for determining what
+          // is happening in regards to a mutation error
+          browserHistory.push('/login');
+        },
+        onSuccess: () => {},
+      },
     );
   }
 

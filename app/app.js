@@ -5,13 +5,8 @@ import ReactDOM from 'react-dom';
 import Relay from 'react-relay';
 import { browserHistory, Router, applyRouterMiddleware } from 'react-router';
 import useRelay from 'react-router-relay';
-import Axios from 'axios';
 import routes from './routes';
 import './styles/styles.css';
-
-Axios.post('http://localhost:8080/authenticate',
-          { email: 'testuser@test.com', password: 'password' },
-          { withCredentials: true });
 
 const getCookie = () => {
   const name = 'xsrf_token=';
@@ -26,6 +21,7 @@ const getCookie = () => {
       return c.substring(name.length, c.length);
     }
   }
+  browserHistory.push('/login');
   return '';
 };
 

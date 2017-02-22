@@ -60,11 +60,11 @@ describe('TodoApp component', () => {
   const mockFailureFn = jest.fn((onFailure, transaction) => onFailure(transaction));
 
   const relay = {
-    commitUpdate: jest.fn((mutation, callbacks) => {
+    commitUpdate: jest.fn((mutation) => {
       if (mutation instanceof AddTodoMutation) {
         return AddTodoStatus(mutation)
-          ? mockSuccessFn(callbacks ? callbacks.onSuccess : () => {}, {})
-          : mockFailureFn(callbacks ? callbacks.onFailure : () => {}, {});
+          ? mockSuccessFn(() => {}, {})
+          : mockFailureFn(() => {}, {});
       }
       return {};
     }),

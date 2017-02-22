@@ -30,7 +30,10 @@ const authenticator = expressJWT({
   getToken: (req) => {
     if (req.headers.origin.split('//')[1] === req.headers.referer.split('//')[1].split('/')[0]) {
       const cookies = cookie.parse(req.headers.cookie || '');
-      const xsrfToken = jwt.decode(cookies.access_token, { complete: true }).payload.xsrfToken;
+      let xsrfToken = '';
+      if (cookies.access_token) {
+        xsrfToken = jwt.decode(cookies.access_token, { complete: true }).payload.xsrfToken;
+      }
       if (xsrfToken === req.headers['x-xsrf-token']) {
         return cookies.access_token;
       }
@@ -39,13 +42,17 @@ const authenticator = expressJWT({
   },
 }).unless({ path: ['/graphiql'] });
 
-app.use('/graphql', authenticator, graphQLHTTP({ schema, pretty: true, graphiql: true }));
-app.use((err, req, res, next) => {
+const tokenCheck = (err, req, res, next) => {
+  console.log(err.name);
   if (err.name === 'UnauthorizedError') {
-    res.redirect('/login');
+    res.clearCookie('xsrf_token');
+    res.clearCookie('access_token');
+    next(err);
   }
   next();
-});
+};
+
+app.use('/graphql', [authenticator, tokenCheck], graphQLHTTP({ schema, pretty: true, graphiql: true }));
 
 app.use(express.static('public'));
 
