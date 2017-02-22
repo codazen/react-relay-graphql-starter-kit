@@ -15,21 +15,24 @@ const UserType = new GraphQLObjectType({
     firstName: {
       type: GraphQLString,
       description: 'user\'s first name',
+      resolve: source => source._doc.firstName, // eslint-disable-line
     },
     lastName: {
       type: GraphQLString,
       description: 'user\'s last name',
+      resolve: source => source._doc.lastName, // eslint-disable-line
     },
     email: {
       type: new GraphQLNonNull(GraphQLString),
       description: 'user\'s unique email address',
+      resolve: source => source._doc.email, // eslint-disable-line
     },
     todos: {
       type: TodoConnection,
       description: 'The todos for a user',
       args: connectionArgs,
       resolve: async (source, args, context, info) => { // eslint-disable-line
-        const todos = await getTodosFromUser(context.user.userID);
+        const todos = await getTodosFromUser(source._doc._id); // eslint-disable-line
         return connectionFromArray(todos, args);
       },
     },

@@ -52,38 +52,44 @@ export default class Login extends React.Component {
       login,
     } = this.state;
     event.preventDefault();
-    if (login) {
-      Axios.post('http://localhost:8080/authenticate',
-        { email, password },
-        { withCredentials: true })
-        .then(() => {
-          window.location = '/';
-        })
-        .catch(() => {
-          this.setState({
-            error: true,
+    if (password.length > 6) {
+      if (login) {
+        Axios.post('http://localhost:8080/login',
+          { email, password },
+          { withCredentials: true })
+          .then(() => {
+            window.location = '/';
+          })
+          .catch(() => {
+            this.setState({
+              error: true,
+            });
           });
-        });
-    } else {
-      Axios.post('http://localhost:8080/create',
-        { email, password, firstName, lastName },
-        { withCredentials: true })
-        .then(() => {
-          window.location = '/';
-        })
-        .catch(() => {
-          // handle errors here such as cases where a user can't be created
-          // due to conflicting emails
-          this.setState({
-            error: true,
+      } else {
+        Axios.post('http://localhost:8080/create',
+          { email, password, firstName, lastName },
+          { withCredentials: true })
+          .then(() => {
+            window.location = '/';
+          })
+          .catch(() => {
+            // handle errors here such as cases where a user can't be created
+            // due to conflicting emails
+            this.setState({
+              error: true,
+            });
           });
-        });
+      }
     }
   }
 
   handleToggle = () => {
     this.setState({
       login: !this.state.login,
+      firstName: '',
+      lastName: '',
+      email: '',
+      password: '',
     });
   }
 
@@ -98,6 +104,11 @@ export default class Login extends React.Component {
     } = this.state;
     return (
       <div className="login-component">
+        {login ?
+          <h1>TodoApp Login</h1>
+          :
+          <h1>User Signup</h1>
+        }
         <form onSubmit={this.handleFormSubmit}>
           {login ?
             null

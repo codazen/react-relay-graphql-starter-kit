@@ -43,7 +43,6 @@ const authenticator = expressJWT({
 }).unless({ path: ['/graphiql'] });
 
 const tokenCheck = (err, req, res, next) => {
-  console.log(err.name);
   if (err.name === 'UnauthorizedError') {
     res.clearCookie('xsrf_token');
     res.clearCookie('access_token');

@@ -9,7 +9,7 @@ import { UserModel, addUser } from './data/models/userModel';
 
 const router = express.Router();
 
-router.post('/authenticate', (req, res) => {
+router.post('/login', (req, res) => {
   UserModel.findOne({ email: req.body.email }, (err, user) => {
     if (err) {
       res.status(401).send({ success: false, message: err });
@@ -32,6 +32,12 @@ router.post('/authenticate', (req, res) => {
       });
     }
   });
+});
+
+router.post('/logout', (req, res) => {
+  res.clearCookie('xsrf_token');
+  res.clearCookie('access_token');
+  res.send({ success: true, message: 'User logged out' });
 });
 
 router.post('/create', async (req, res) => {

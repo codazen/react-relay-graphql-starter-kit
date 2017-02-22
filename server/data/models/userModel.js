@@ -134,8 +134,8 @@ exports.removeTodoFromUser = (userID: string, todoID: string) =>
 
 exports.getUser = (_id: string) =>
   new Promise((resolve, reject) => {
-    User.findOne(
-      { _id },
+    User.findById(
+      _id,
       (err, user) => {
         err ? reject(err) : resolve(user);
       },

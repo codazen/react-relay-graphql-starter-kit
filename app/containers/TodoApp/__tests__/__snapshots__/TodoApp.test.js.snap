@@ -2,7 +2,7 @@ exports[`TodoApp component Renders correctly 1`] = `
 <div
   className="todo-app-component">
   <h1>
-    TODO APP
+    undefined undefined\'s TODO APP
   </h1>
   <TodoForm
     addTodo={[Function]} />
@@ -142,5 +142,9 @@ exports[`TodoApp component Renders correctly 1`] = `
         },
       }
     } />
+  <button
+    onClick={[Function]}>
+    Logout
+  </button>
 </div>
 `;
