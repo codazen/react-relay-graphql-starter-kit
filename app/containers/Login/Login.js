@@ -135,12 +135,12 @@ export default class Login extends React.Component {
           {login ?
             <div>
               <button action="submit">Login</button>
-              <p>Not registered? <a onClick={this.handleToggle}>Create an account</a></p>
+              <p>Not registered? <a href="#" onClick={this.handleToggle}>Create an account</a></p>
             </div>
             :
             <div>
               <button action="submit">Create New User</button>
-              <p>Already registered? <a onClick={this.handleToggle}>Sign in</a></p>
+              <p>Already registered? <a href="#" onClick={this.handleToggle}>Sign in</a></p>
             </div>
           }
           {error ?
