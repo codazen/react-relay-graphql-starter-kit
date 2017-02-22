@@ -1,4 +1,5 @@
 /* @flow */
+/* eslint jsx-a11y/href-no-hash: 'off' */
 
 import React from 'react';
 import Axios from 'axios';
