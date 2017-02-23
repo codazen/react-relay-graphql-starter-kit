@@ -49,10 +49,6 @@ export default (env: any = {}) => {
         'node_modules',
       ],
     },
-    devServer: {
-      historyApiFallback: true,
-      quiet: true,
-    },
   };
 
   const serverConfig = {
