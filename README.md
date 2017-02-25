@@ -19,7 +19,7 @@ Core technologies
   * [graphql-tools](http://dev.apollodata.com/tools/graphql-tools/ "graphql-tools")
   * [casual](https://github.com/boo1ean/casual "casual")
 * Tools
-  * [Webpack](https://webpack.github.io/ "Webpack")
+  * [Webpack 2](https://webpack.js.org/ "Webpack 2")
   * [Babel](https://babeljs.io/ "Babel")
   * [Flow](https://flowtype.org/ "Flow")
   * [ESLint](http://eslint.org/ "ESLint")
@@ -47,7 +47,16 @@ npm run update-schema
 npm run start:linux
 ```
 Go to http://localhost:8080/ to view the application.  
-Go to http://localhost:8080/graphql to view graphiql
+Go to http://localhost:8080/graphql to view GraphiQL.
+
+Production Build
+------
+```
+npm run build
+```
+Outputs the client bundle in the `public` directory  
+Outputs the transpiled server code in the `lib` directory
+
 License
 ------
 MIT
