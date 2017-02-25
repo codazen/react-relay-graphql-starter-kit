@@ -10,6 +10,9 @@ const TodoSchema = new mongoose.Schema({
 const Todo = mongoose.model('Todo', TodoSchema);
 exports.TodoModel = Todo;
 
+/**
+ * Add a todo
+ */
 exports.addTodo = (content: string) => {
   const newTodo = new Todo({ content });
   return new Promise((resolve, reject) => {
@@ -19,6 +22,9 @@ exports.addTodo = (content: string) => {
   });
 };
 
+/**
+ * Update a todo's content by id
+ */
 exports.updateTodo = (_id: string, content: string) =>
   new Promise((resolve, reject) => {
     Todo.findByIdAndUpdate(
@@ -31,6 +37,9 @@ exports.updateTodo = (_id: string, content: string) =>
     );
   });
 
+/**
+ * Remove a todo by id
+ */
 exports.removeTodo = (_id: string) =>
   new Promise((resolve, reject) => {
     Todo.findByIdAndRemove(
@@ -41,6 +50,9 @@ exports.removeTodo = (_id: string) =>
     );
   });
 
+/**
+ * Get a todo by id
+ */
 exports.getTodo = (_id: string) =>
   new Promise((resolve, reject) => {
     Todo.findOne(

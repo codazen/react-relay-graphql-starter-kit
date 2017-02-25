@@ -1,3 +1,3 @@
 module.exports = {
-  secret: 'testsecret',
+  secret: 'testsecret', // should be replaced with unguessable secret
 };

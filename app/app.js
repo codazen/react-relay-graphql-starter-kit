@@ -8,6 +8,9 @@ import useRelay from 'react-router-relay';
 import routes from './routes';
 import './styles/styles.css';
 
+/**
+ * get xsrf cookie. if it exists it is okay to make server requests. If not, return to login page
+ */
 const getCookie = () => {
   const name = 'xsrf_token=';
   const decodedCookie = decodeURIComponent(document.cookie);
@@ -25,6 +28,10 @@ const getCookie = () => {
   return '';
 };
 
+/**
+ * Make network requests to correct graphQL endpoint
+ * Include X-XSRF-TOKEN to prevent XSRF attack.
+ */
 Relay.injectNetworkLayer(
   new Relay.DefaultNetworkLayer('http://localhost:8080/graphql', {
     credentials: 'include',

@@ -9,6 +9,11 @@ import { UserModel, addUser } from './data/models/userModel';
 
 const router = express.Router();
 
+/**
+ * Endpoint for logging in a user.
+ * Returns httpOnly cookie containing signed jwt with userID
+ * Returns cookie containing random string for xsrf
+ */
 router.post('/login', (req, res) => {
   UserModel.findOne({ email: req.body.email }, (err, user) => {
     if (err) {
@@ -34,12 +39,19 @@ router.post('/login', (req, res) => {
   });
 });
 
+/**
+ * To log a user out, delete their cookies
+ */
 router.post('/logout', (req, res) => {
   res.clearCookie('xsrf_token');
   res.clearCookie('access_token');
   res.send({ success: true, message: 'User logged out' });
 });
 
+/**
+ * Create a new user
+ * Returns userID cookie and xsrf cookie
+ */
 router.post('/create', async (req, res) => {
   const user = await addUser(req.body);
   const xsrfToken = uuidV4();

@@ -16,8 +16,9 @@ type State = {
 };
 
 /**
- * Container for Login System
+ * Container for Login / User Creation Form
  * Parent component: N/A
+ * Child component: N/A
  */
 export default class Login extends React.Component {
 
@@ -43,6 +44,9 @@ export default class Login extends React.Component {
     this.setState(newState);
   }
 
+  /**
+   * Makes call to either create or login a user based on the input form.
+   */
   handleFormSubmit = (event: any) => {
     const {
       firstName,
@@ -61,6 +65,7 @@ export default class Login extends React.Component {
             window.location = '/';
           })
           .catch(() => {
+            // handle errors here for invalid login.
             this.setState({
               error: true,
             });
@@ -83,6 +88,9 @@ export default class Login extends React.Component {
     }
   }
 
+  /**
+  * Toggle the view to switch between login and user creation
+  */
   handleToggle = () => {
     this.setState({
       login: !this.state.login,

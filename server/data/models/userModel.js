@@ -27,6 +27,9 @@ const UserSchema = new mongoose.Schema({
   }],
 });
 
+/**
+ * Pre-save hook to ensure that passwords are encrypted upon storage
+ */
 UserSchema.pre('save', function (next) {
   const user = this;
   if (!user.isModified('password')) {
@@ -42,6 +45,9 @@ UserSchema.pre('save', function (next) {
   });
 });
 
+/**
+ * User method to validate password
+ */
 UserSchema.methods.validatePassword = function (password, cb) {
   bcrypt.compare(password, this.password, (err, match) => {
     if (err) return cb(err);
@@ -59,6 +65,9 @@ type AddUserParams = {
   password: string,
 };
 
+/**
+ * Add a user based on user parameters
+ */
 exports.addUser = (user: AddUserParams) => {
   const newUser = new User(user);
   return new Promise((resolve, reject) => {
@@ -73,6 +82,9 @@ type UserInfo = {
   lastName: string,
 }
 
+/**
+ * Update a user through mutation call (doesn't allow for password or email changes)
+ */
 exports.updateUserInfo = (_id: string, userInfo: UserInfo) =>
   new Promise((resolve, reject) => {
     const {
@@ -89,6 +101,9 @@ exports.updateUserInfo = (_id: string, userInfo: UserInfo) =>
     );
   });
 
+/**
+ * Update user password
+ */
 exports.updatePassword = (_id: string, userPassword: string) =>
   new Promise((resolve, reject) => {
     User.findById(_id, (err, user) => {
@@ -99,6 +114,9 @@ exports.updatePassword = (_id: string, userPassword: string) =>
     });
   });
 
+/**
+ * Remove a user by id
+ */
 exports.removeUser = (_id: string) =>
   new Promise((resolve, reject) => {
     User.findByIdAndRemove(
@@ -109,6 +127,9 @@ exports.removeUser = (_id: string) =>
     );
   });
 
+/**
+ * Add a todo to a user's todoList
+ */
 exports.addTodoToUser = (userID: string, todoID: string) =>
   new Promise((resolve, reject) => {
     User.findById({ _id: userID }, (err, user) => {
@@ -119,6 +140,9 @@ exports.addTodoToUser = (userID: string, todoID: string) =>
     });
   });
 
+/**
+ * Remove todo from a user's todoList
+ */
 exports.removeTodoFromUser = (userID: string, todoID: string) =>
   new Promise((resolve, reject) => {
     User.findOne({ _id: userID }, (err, user) => {
@@ -132,6 +156,9 @@ exports.removeTodoFromUser = (userID: string, todoID: string) =>
     });
   });
 
+/**
+ * Get user by id
+ */
 exports.getUser = (_id: string) =>
   new Promise((resolve, reject) => {
     User.findById(
@@ -142,6 +169,9 @@ exports.getUser = (_id: string) =>
     );
   });
 
+/**
+ * Get todos for a user
+ */
 exports.getTodosFromUser = (_id: string) =>
   new Promise((resolve, reject) => {
     User.findById(_id, 'todos')

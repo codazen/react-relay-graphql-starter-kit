@@ -25,6 +25,9 @@ app.use(bodyParser());
 
 app.use('/', router);
 
+/**
+ * expressJWT middleware that is able to verify authenticity of jwt while also doing xsrf checks.
+ */
 const authenticator = expressJWT({
   secret,
   getToken: (req) => {
@@ -42,6 +45,10 @@ const authenticator = expressJWT({
   },
 }).unless({ path: ['/graphiql'] });
 
+/**
+ * custom middleware that is used to detect a failed authorization attempt
+ * and delete exisiting cookies.
+ */
 const tokenCheck = (err, req, res, next) => {
   if (err.name === 'UnauthorizedError') {
     res.clearCookie('xsrf_token');
