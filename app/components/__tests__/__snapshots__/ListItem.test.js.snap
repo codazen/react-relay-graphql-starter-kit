@@ -30,66 +30,34 @@ exports[`ListItem component Tests with all defined props Renders correctly 1`] =
 </div>
 `;
 
-exports[`ListItem component Tests with checked item Renders correctly 1`] = `
-<div
-  className="list-item-component">
-  <div>
-    <div
-          className="col-md-1">
-          <input
-            checked={true}
-            id="testId"
-            onChange={[Function]}
-            type="checkbox" />
-          <label
-            htmlFor="testId">
-
-          </label>
-        </div>
-        <div
-          className="col-md-9">
-          <span
-            className="item-checked"
-            onClick={[Function]}>
-            testContent
-          </span>
-          <button
-            onClick={[Function]}>
-            x
-          </button>
-        </div>
-  </div>
-</div>
-`;
-
 exports[`ListItem component Tests with undefined removeItem prop Renders correctly 1`] = `
 <div
   className="list-item-component">
   <div>
     <div
-          className="col-md-1">
-          <input
-            checked={false}
-            id="testId"
-            onChange={[Function]}
-            type="checkbox" />
-          <label
-            htmlFor="testId">
-
-          </label>
-        </div>
-        <div
-          className="col-md-9">
-          <span
-            className={null}
-            onClick={null}>
-            testContent
-          </span>
-          <button
-            onClick={[Function]}>
-            x
-          </button>
-        </div>
+      className="col-md-1">
+      <input
+        checked={false}
+        id="testId"
+        onChange={[Function]}
+        type="checkbox" />
+      <label
+        htmlFor="testId">
+         
+      </label>
+    </div>
+    <div
+      className="col-md-9">
+      <span
+        className={null}
+        onClick={[Function]}>
+        testContent
+      </span>
+      <button
+        onClick={[Function]}>
+        x
+      </button>
+    </div>
   </div>
 </div>
 `;
