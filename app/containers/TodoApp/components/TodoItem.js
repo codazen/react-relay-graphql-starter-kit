@@ -9,6 +9,7 @@ import UpdateTodoMutation from '../mutations/UpdateTodoMutation';
 type Todo = {
   id: string,
   content: string,
+  isChecked: boolean,
 };
 
 type Props = {
@@ -46,7 +47,10 @@ class TodoItem extends React.Component {
    */
   handleUpdateTodo = (todo: Todo) => {
     this.props.relay.commitUpdate(
-      new UpdateTodoMutation({ todo: this.props.todo, content: todo.content }),
+      new UpdateTodoMutation({
+        todo: this.props.todo,
+        content: todo.content,
+        isChecked: todo.isChecked }),
     );
   }
 
@@ -54,11 +58,13 @@ class TodoItem extends React.Component {
     const {
       content,
       id,
+      isChecked,
     } = this.props.todo;
     return (
       <ListItem
         content={content}
         id={id}
+        isChecked={isChecked}
         removeItem={this.handleRemoveTodo}
         updateItem={this.handleUpdateTodo}
       />
@@ -74,6 +80,7 @@ export default Relay.createContainer(TodoItem, {
       fragment on Todo {
         id
         content
+        isChecked
         ${UpdateTodoMutation.getFragment('todo')}
       }
     `,

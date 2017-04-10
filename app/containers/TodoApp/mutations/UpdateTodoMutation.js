@@ -20,10 +20,12 @@ export default class UpdateTodoMutation extends Relay.Mutation {
     const {
       todo,
       content,
+      isChecked,
     } = this.props;
     return {
       id: todo.id,
       content,
+      isChecked,
     };
   }
 
@@ -32,6 +34,7 @@ export default class UpdateTodoMutation extends Relay.Mutation {
       fragment on UpdateTodoPayload @relay(pattern: true) {
         todo {
           content
+          isChecked
         }
       }
     `;

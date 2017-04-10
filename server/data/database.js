@@ -4,6 +4,7 @@
 export class Todo {
   id: string;
   content: string;
+  iChecked: boolean;
 }
 
 export class User {
@@ -42,6 +43,7 @@ export function addTodo(content: string) {
   const todo = new Todo();
   todo.id = `${nextTodoId++}`;
   todo.content = content;
+  todo.isChecked = false;
   todosById[todo.id] = todo;
   todoIdsByUser[VIEWER].push(todo.id);
   return todo.id;
@@ -82,7 +84,8 @@ export function removeTodo(id: string) {
 }
 
 // update todo
-export function updateTodo(id: string, content: string) {
+export function updateTodo(id: string, content: string, isChecked: boolean) {
   const todo = getTodo(id);
   todo.content = content;
+  todo.isChecked = isChecked;
 }
