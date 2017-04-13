@@ -15,12 +15,27 @@ type Props = {
   },
 };
 
+type State = {
+  filter: string, // filter for new todo
+  showFilter: boolean // filter state
+};
+
 /**
  * Container for todo application
  * Parent component: N/A
  * Child components: TodoList, TodoForm
  */
 class TodoApp extends React.Component {
+
+  constructor(props: Props) {
+    super(props);
+    this.state = {
+      filter: 'all',
+      showFilter: false,
+    };
+  }
+
+  state: State;
 
   props: Props;
 
@@ -34,12 +49,51 @@ class TodoApp extends React.Component {
     );
   }
 
+  /**
+  * handleFilterInput function passed to the TodoForm
+  */
+  handleFilterInput = (event: any) => {
+    this.setState({
+      filter: event.target.name,
+      showFilter: false,
+    });
+  }
+
+  /**
+  * handleToggleInput function passed to the TodoForm
+  */
+  toggleShowFilter = () => {
+    this.setState({
+      showFilter: !this.state.showFilter,
+    });
+  }
+
+  /**
+  * Close filter on move out
+  */
+  collapseFilter = () => {
+    this.setState({
+      showFilter: false,
+    });
+  }
+
   render() {
     return (
-      <div className="todo-app-component">
+      <div className="todo-app-component" >
         <h1>TODO APP</h1>
-        <TodoForm addTodo={this.handleAddTodo} />
-        <TodoList todos={this.props.user.todos} user={this.props.user} />
+        <TodoForm
+          addTodo={this.handleAddTodo}
+          filter={this.state.filter}
+          showFilter={this.state.showFilter}
+          toggleShowFilter={this.toggleShowFilter}
+          collapseFilter={this.collapseFilter}
+          handleFilterInput={this.handleFilterInput}
+        />
+        <TodoList
+          todos={this.props.user.todos}
+          user={this.props.user}
+          filter={this.state.filter}
+        />
       </div>
     );
   }

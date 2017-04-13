@@ -69,9 +69,6 @@ export default class ListItem extends React.Component {
    * Makes check item call
    */
   handleCheck = () => {
-    this.setState({
-      isChecked: !this.state.isChecked,
-    });
     const {
       updateItem,
     } = this.props;
@@ -79,7 +76,10 @@ export default class ListItem extends React.Component {
       updateItem({
         id: this.state.id,
         content: this.state.content,
-        isChecked: this.state.isChecked,
+        isChecked: !this.state.isChecked,
+      });
+      this.setState({
+        isChecked: !this.state.isChecked,
       });
     }
   }
@@ -132,7 +132,7 @@ export default class ListItem extends React.Component {
             </div>
             <div className="col-md-9">
               <span className={this.state.isChecked ? 'item-checked' : null} onClick={this.props.updateItem ? this.openEditMode : null}>
-               {this.state.content}
+                {this.state.content}
               </span>
               <button onClick={this.handleRemove}>
                 x
