@@ -97,10 +97,10 @@ export default class ListItem extends React.Component {
         content: this.state.content,
         isChecked: this.state.isChecked,
       });
+      this.setState({
+        editStatus: false,
+      });
     }
-    this.setState({
-      editStatus: false,
-    });
   }
 
   render() {
@@ -124,15 +124,14 @@ export default class ListItem extends React.Component {
                 onChange={this.handleCheck}
                 id={this.state.id}
               />
-              <label
-                htmlFor={this.state.id}
-              >
-                {' '}
-              </label>
+              <label htmlFor={this.state.id}>{' '}</label>
             </div>
             <div className="col-md-9">
-              <span className={this.state.isChecked ? 'item-checked' : null} onClick={this.props.updateItem ? this.openEditMode : null}>
-               {this.state.content}
+              <span
+                className={this.state.isChecked ? 'item-checked' : null}
+                onClick={this.props.updateItem ? this.openEditMode : null}
+              >
+                {this.state.content}
               </span>
               <button onClick={this.handleRemove}>
                 x
