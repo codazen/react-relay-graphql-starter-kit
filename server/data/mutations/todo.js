@@ -4,6 +4,7 @@ import {
   GraphQLNonNull,
   GraphQLString,
   GraphQLID,
+  GraphQLBoolean,
 } from 'graphql';
 
 import {
@@ -94,6 +95,9 @@ const updateTodoMutation = mutationWithClientMutationId({
     content: {
       type: new GraphQLNonNull(GraphQLString),
     },
+    isChecked: {
+      type: new GraphQLNonNull(GraphQLBoolean),
+    },
   },
   outputFields: {
     todo: {
@@ -101,9 +105,9 @@ const updateTodoMutation = mutationWithClientMutationId({
       resolve: async ({ localTodoId }) => getTodo(localTodoId),
     },
   },
-  mutateAndGetPayload: ({ id, content }) => {
+  mutateAndGetPayload: ({ id, content, isChecked }) => {
     const localTodoId = fromGlobalId(id).id;
-    updateTodo(localTodoId, content);
+    updateTodo(localTodoId, content, isChecked);
     return {
       localTodoId,
     };

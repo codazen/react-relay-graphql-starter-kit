@@ -1,6 +1,6 @@
 /* @flow */
 
-import { GraphQLString, GraphQLObjectType } from 'graphql';
+import { GraphQLString, GraphQLObjectType, GraphQLBoolean } from 'graphql';
 import { connectionDefinitions, globalIdField } from 'graphql-relay';
 import { nodeInterface } from '../nodes';
 import { registerType } from '../typeRegistry';
@@ -18,6 +18,10 @@ const TodoType = new GraphQLObjectType({
     content: {
       type: GraphQLString,
       description: 'The content of the todo item',
+    },
+    isChecked: {
+      type: GraphQLBoolean,
+      description: 'The state of the todo item',
     },
   },
   interfaces: () => [nodeInterface],

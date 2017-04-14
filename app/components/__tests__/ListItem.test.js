@@ -12,6 +12,7 @@ describe('ListItem component', () => {
   const updateItem = jest.fn();
   const id = 'testId';
   const content = 'testContent';
+  const isChecked = false;
 
   describe('Tests with all defined props', () => {
     beforeEach(() => {
@@ -19,6 +20,7 @@ describe('ListItem component', () => {
         <ListItem
           id={id}
           content={content}
+          isChecked={isChecked}
           removeItem={removeItem}
           updateItem={updateItem}
         />);
@@ -104,6 +106,7 @@ describe('ListItem component', () => {
           id={id}
           content={content}
           removeItem={removeItem}
+          isChecked={isChecked}
         />);
       removeItem.mockClear();
       updateItem.mockClear();
@@ -134,6 +137,55 @@ describe('ListItem component', () => {
         expect(listItem.instance().state.content).toBe(content);
         listItem.instance().handleChange(event);
         expect(listItem.instance().state.content).toBe('testValue');
+      });
+    });
+
+    describe('Unit test: handleCheck', () => {
+      beforeEach(() => {
+        event = {
+          target: {
+            name: 'isChecked',
+            value: false,
+          },
+        };
+      });
+
+      it('handles checkbox change false-true', () => {
+        expect(listItem.instance().state.isChecked).toBe(false);
+        listItem.instance().handleCheck(event);
+        expect(listItem.instance().state.isChecked).toBe(true);
+      });
+      it('handles checkbox change true-false', () => {
+        expect(listItem.instance().state.isChecked).toBe(false);
+        listItem.instance().handleCheck(event);
+        expect(listItem.instance().state.isChecked).toBe(true);
+        listItem.instance().handleCheck(event);
+        expect(listItem.instance().state.isChecked).toBe(false);
+      });
+    });
+
+    describe('ListItem component Tests with checked item Renders correctly', () => {
+      beforeEach(() => {
+        event = {
+          target: {
+            name: 'isChecked',
+            value: true,
+          },
+        };
+        listItem = shallow(
+          <ListItem
+            id={id}
+            content={content}
+            isChecked={isChecked}
+            removeItem={removeItem}
+            updateItem={updateItem}
+          />);
+        removeItem.mockClear();
+        updateItem.mockClear();
+      });
+
+      it('Renders correctly', () => {
+        expect(shallowToJson(listItem)).toMatchSnapshot();
       });
     });
 
@@ -184,6 +236,7 @@ describe('ListItem component', () => {
           id={id}
           content={content}
           updateItem={updateItem}
+          isChecked={isChecked}
         />);
       removeItem.mockClear();
       updateItem.mockClear();
