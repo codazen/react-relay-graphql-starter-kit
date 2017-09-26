@@ -4,7 +4,7 @@
 export class Todo {
   id: string;
   content: string;
-  iChecked: boolean;
+  isChecked: boolean;
 }
 
 export class User {
