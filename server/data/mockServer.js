@@ -19,6 +19,7 @@ const mocks = {
   Todo: () => ({
     id: () => casual.integer(0, 1000).toString(),
     content: () => casual.string,
+    isChecked: () => casual.boolean,
   }),
 };
 
@@ -34,6 +35,7 @@ query TodoList {
         node {
           id
           content
+          isChecked
         }
       }
     }
